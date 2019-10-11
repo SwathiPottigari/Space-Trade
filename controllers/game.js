@@ -1,6 +1,6 @@
 let game = {
-    loadGame : function(){
-
+    loadGame : function(planets){
+        
     },
     saveGame : function(){
         console.log("Files associated")
@@ -31,6 +31,15 @@ let game = {
     },
     updateGalacticHappiness : function(){
 
-    }
+    },
+    planets : [{},{},{},{},{}],
+    //this will update on load/
+    fuel: 100,
+    //this will update on load/
+    money: 1000,
+    cargoHold: [],
+    //planetId
+    location: 1,
+
 }
 module.exports = game;

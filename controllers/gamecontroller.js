@@ -10,7 +10,7 @@ var db = require("../models");
 router.get("/", function(req, res) {
     //This is a test to validate routing
     game.saveGame();
-    res.send("Foo")
+    res.send("Foo");
 });
 
 router.post("/api/savegame", function(req, res) {
