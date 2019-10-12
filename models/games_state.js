@@ -23,7 +23,7 @@ module.exports=function(sequelize, DataTypes){
     });
 
     GamesState.associate = function (models) {
-        GamesState.belongsTo(models.Games, {
+        GamesState.belongsTo(models.Game, {
             foreignKey: {
                 allowNull: false
             }

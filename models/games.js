@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Games = sequelize.define("Games", {
+    var Game = sequelize.define("Game", {
         difficulty: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -10,16 +10,16 @@ module.exports = function (sequelize, DataTypes) {
     });
 
 
-    Games.associate = function (models) {
-        Games.belongsTo(models.User,{
+    Game.associate = function (models) {
+        Game.belongsTo(models.User,{
             foreignKey: {
                 allowNull: false
             }
         });
-        Games.hasMany(models.GamesState, {
+        Game.hasMany(models.GamesState, {
             onDelete: "cascade"
         });
     };
 
-    return Games;
+    return Game;
 };
