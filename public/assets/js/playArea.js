@@ -19,3 +19,72 @@ var playArea = {
 }
 
 // Create five planets to be displayed in the play area
+
+
+// For testing the api call
+// $("#test").click(function(){
+// var data={
+//     name:"Test",
+//     difficulty:"Easy",
+//     planetId:[
+//         {
+//             id:1,
+//             resources:[{
+//                 // id:20,
+//                 count:20
+//             },{
+//                 count:20
+//             }
+//         ]
+//         },
+//         {
+//             id:5,
+//             resources:[{
+//                 // id:20,
+//                 count:20
+//             },
+//             {
+//                 // id:20,
+//                 count:20
+//             }
+//         ]
+//         },
+//         {
+//             id:2,
+//             resources:[{
+//                 // id:20,
+//                 count:30
+//             },
+//             {
+//                 // id:20,
+//                 count:30
+//             }
+//         ]
+//         },
+//         {
+//             id:3,
+//             resources:[{
+//                 // id:20,
+//                 count:40
+//             },
+//             {
+//                 // id:20,
+//                 count:40
+//             }
+//         ]
+//         }
+//     ],
+//     happinessCount:20,
+//     isHappy:true,
+//     isWon:false
+// };
+// alert(data)
+// saveGame(data);
+// });
+
+// function saveGame(authorData) {
+//     $.post("/api/savegame", authorData)
+//       .then(function(result){
+//           alert("done");
+//       });
+//   }
