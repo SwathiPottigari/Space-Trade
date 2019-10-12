@@ -6,7 +6,7 @@ let game = {
         console.log("Files associated")
     },
     displayPlanetaryGoods : function(){
-
+        
     },
     processTrade : function (){
     //probably need an object that holds all the values for the various trade values
