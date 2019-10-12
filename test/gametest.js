@@ -12,7 +12,7 @@ let trader = {
         },
         {
             name: "space yarn",
-            amount: 3
+            amount: 1
         },
         {
             name: "space balls",
@@ -157,6 +157,13 @@ let updatedPlanets = [saveTestplanet1, saveTestplanet2];
 //game.processTrade(trader, planet1, "space kitty litter", true, 4);
 
 //new item for cargo hold
-game.processTrade(trader, planet1, "space catnip", true, 4);
+//game.processTrade(trader, planet1, "space catnip", true, 4);
 
 //normal sell trade
+
+
+//sell trade where planet has 0 of the current items
+//game.processTrade(trader, planet1, "space balls", false, 4);
+
+//sell trade when item would be removed from cargo hold
+//game.processTrade(trader, planet1, "space yarn", false, 4);

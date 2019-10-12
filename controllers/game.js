@@ -59,7 +59,40 @@ let game = {
         //if you're not buying, you're selling
         else {
             //You can sell as much as you like, we don't need to validate on this end, we'll have the UI disapear once you're out of a resource to sell
+            //If we have client side validation, this never needs to have a null check like on purchase
+            let resourceInCargoHold = trader.cargoHold.find((cargoResource) => {
+                return cargoResource.name === resource;
+            });
 
+            let planetaryResource = planet.resources.find((resToSell) => {
+                return resToSell.name === resource;
+            });
+
+            if (!planetaryResource) {
+                planetaryResource = {
+                    name: resource,
+                    amount: 0,
+                    cost: 10//this needs to be updated from the db, not from nothing like here.
+                }
+                planet.resources.push(planetaryResource)
+
+            }
+
+            resourceInCargoHold.amount--;
+            planetaryResource.amount++;
+            trader.money += planetaryResource.cost;
+            
+            //remove the item from the cargo hold if we don't have any left.
+            if(resourceInCargoHold.amount === 0){
+                trader.cargoHold = trader.cargoHold.filter(isMatch)
+            }
+
+            function isMatch(res){
+                if(resource === res.name){
+                    return false;
+                }
+                return true;
+            }
 
         };
         console.log("Trader:" + JSON.stringify(trader))
