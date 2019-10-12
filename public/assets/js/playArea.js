@@ -2,72 +2,79 @@
 
 
 // For testing the api call
-// $("#test").click(function(){
-// var data={
-//     name:"Test",
-//     difficulty:"Easy",
-//     planetId:[
-//         {
-//             id:1,
-//             resources:[{
-//                 // id:20,
-//                 count:20
-//             },{
-//                 count:20
-//             }
-//         ]
-//         },
-//         {
-//             id:5,
-//             resources:[{
-//                 // id:20,
-//                 count:20
+// $("#test").click(function () {
+//     var data = {
+//         name: "Test",
+//         difficulty: "Easy",
+//         planetId: [
+//             {
+//                 id: 1,
+//                 resources: [{
+//                     id:20,
+//                     count: 20
+//                 }, {
+//                     count: 20
+//                 }
+//                 ],
+//                 happinessCount: 20,
+//                 isHappy: true
 //             },
 //             {
-//                 // id:20,
-//                 count:20
-//             }
-//         ]
-//         },
-//         {
-//             id:2,
-//             resources:[{
-//                 // id:20,
-//                 count:30
+//                 id: 5,
+//                 resources: [{
+//                     id:20,
+//                     count: 20
+//                 },
+//                 {
+//                     id:20,
+//                     count: 20
+//                 }
+//                 ],
+//                 happinessCount: 30,
+//                 isHappy: false,
 //             },
 //             {
-//                 // id:20,
-//                 count:30
-//             }
-//         ]
-//         },
-//         {
-//             id:3,
-//             resources:[{
-//                 // id:20,
-//                 count:40
+//                 id: 2,
+//                 resources: [{
+//                     id:20,
+//                     count: 30
+//                 },
+//                 {
+//                     id:20,
+//                     count: 30
+//                 }
+//                 ],
+//                 happinessCount: 30,
+//                 isHappy: true,
 //             },
 //             {
-//                 // id:20,
-//                 count:40
+//                 id: 3,
+//                 resources: [{
+//                     id:20,
+//                     count: 40
+//                 },
+//                 {
+//                     id:20,
+//                     count: 40
+//                 }
+//                 ],
+//                 happinessCount: 80,
+//                 isHappy: true,
 //             }
-//         ]
-//         }
-//     ],
-//     happinessCount:20,
-//     isHappy:true,
-//     isWon:false
-// };
-// alert(data)
-// saveGame(data);
+//         ],
+
+//         isWon: false
+//     };
+//     alert(data)
+//     saveGame(data);
 // });
 
 // function saveGame(authorData) {
 //     $.post("/api/savegame", authorData)
-//       .then(function(result){
-//           alert("done");
-//       });
-//   }
+//         .then(function (result) {
+//             alert("done");
+//         });
+// }
 
 // $(document).ready(function() {
 //     startGame();

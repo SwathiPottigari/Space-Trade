@@ -43,14 +43,15 @@ router.post("/api/savegame", function (req, res) {
             for (var i = 0; i < req.body.planetId.length; i++) {
                 db.GamesState.create({
                     planetId: req.body.planetId[i].id,
-                    happinessCount: req.body.happinessCount,
-                    isHappy: req.body.isHappy,
+                    happinessCount: req.body.planetId[i].happinessCount,
+                    isHappy: req.body.planetId[i].isHappy,
                     isWon: req.body.isWon,
                     GameId: game.dataValues.id
                 }).then(function (dbGameStats) {
                     var stats = dbGameStats;
                     for (var i = 0; i < req.body.planetId[i].resources.length; i++) {
                         db.GameStateResources.create({
+                            resourceId:req.body.planetId[i].resources[i].id,
                             count: req.body.planetId[i].resources[i].count,
                             GamesStateId: stats.dataValues.id
                         })
