@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "mikeis31",
+    "password": "password",
     "database": "space_trade",
     "host": "127.0.0.1",
     "dialect": "mysql",
