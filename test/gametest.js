@@ -160,7 +160,7 @@ let updatedPlanets = [saveTestplanet1, saveTestplanet2];
 //game.processTrade(trader, planet1, "space catnip", true, 4);
 
 //normal sell trade
-
+//game.processTrade(trader,planet1,"space kitty litter", true, 4);
 
 //sell trade where planet has 0 of the current items
 //game.processTrade(trader, planet1, "space balls", false, 4);
