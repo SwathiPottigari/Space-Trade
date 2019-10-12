@@ -32,6 +32,15 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT,
       },
     });
+
+    Planet.associate = function (models) {
+      Planet.belongsTo(models.Resource,{
+          foreignKey: {
+              allowNull: false
+          }
+      });
+  };
+
     return Planet;
   };
   

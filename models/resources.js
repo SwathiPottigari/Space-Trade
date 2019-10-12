@@ -14,9 +14,15 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         resCount: {
-            type: DataTypes.TEXT,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
     });
+
+    Resource.associate = function (models) {
+        Resource.hasMany(models.Planet, {
+            onDelete: "cascade"
+        });
+    };
     return Resource;
 };
