@@ -40,19 +40,19 @@ router.post("/api/savegame", function (req, res) {
             UserId: user.dataValues.id
         }).then(function (dbGame) {
             var game = dbGame;
-            for (var i = 0; i < req.body.planetId.length; i++) {
+            for (var i = 0; i < req.body.planets.length; i++) {
                 db.GamesState.create({
-                    planetId: req.body.planetId[i].id,
-                    happinessCount: req.body.planetId[i].happinessCount,
-                    isHappy: req.body.planetId[i].isHappy,
+                    planetId: req.body.planets[i].id,
+                    happinessCount: req.body.planets[i].happinessCount,
+                    isHappy: req.body.planets[i].isHappy,
                     isWon: req.body.isWon,
                     GameId: game.dataValues.id
                 }).then(function (dbGameStats) {
                     var stats = dbGameStats;
-                    for (var i = 0; i < req.body.planetId[i].resources.length; i++) {
+                    for (var j = 0; j < req.body.planets[j].resources.length; j++) {
                         db.GameStateResources.create({
-                            resourceId:req.body.planetId[i].resources[i].id,
-                            count: req.body.planetId[i].resources[i].count,
+                            resourceId:req.body.planets[i].resources[j].id,
+                            count: req.body.planets[i].resources[j].count,
                             GamesStateId: stats.dataValues.id
                         })
                             .then(function (dbPost) {

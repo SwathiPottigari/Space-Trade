@@ -6,7 +6,7 @@
 //     var data = {
 //         name: "Test",
 //         difficulty: "Easy",
-//         planetId: [
+//         planets: [
 //             {
 //                 id: 1,
 //                 resources: [{
