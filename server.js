@@ -10,8 +10,11 @@ var db=require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// var routes = require("./controllers/gamecontroller.js");
-// app.use(routes);
+// Static directory
+app.use(express.static("public"));
+
+var routes = require("./controllers/gamecontroller.js");
+app.use(routes);
 
 
 db.sequelize.sync({ force: true }).then(function() {

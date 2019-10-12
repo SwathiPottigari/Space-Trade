@@ -3,14 +3,25 @@ var express = require("express");
 var router = express.Router();
 var game = require('./game')
 
-// Import the model (cat.js) to use its database functions.
+var path = require("path");
+
+// Import the model to use its database functions.
 var db = require("../models");
 
-// Create all our routes and set up logic within those routes where required.
+// HTML FILES CALLS
+
+// Loads the index.html file on hitting the url
 router.get("/", function(req, res) {
-    //This is a test to validate routing
-    game.saveGame();
-    res.send("Foo");
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+});
+
+
+
+
+// API CALLS
+
+router.get("/api/getInitialGame", function(req, res) {
+    
 });
 
 router.post("/api/savegame", function(req, res) {
