@@ -41,6 +41,7 @@ Notes: Planets with intro text.
 1. planetONE = Cat-a-trophic Chaos
 Originally known as Lab-ra-cadabra-dor is inhabited buy both Cats and Dogs. Tensions currently remain
 high as the cat population increased steadily and caused a scarcity of food resources among the inhabitants.
+This is your home planet, find resouces to feed your people!
 
 2. planetTWO = Deja Moo
 Simply a farm planet where there are no humans. All laws and trade are controlled by alpha pigs. The 
@@ -48,25 +49,31 @@ pigs dictate the way of living by having high taxes. Each animal must contribute
 once a week which the pigs trade internationally for money. What greedy pigs!
 
 3. planetTHREE = Hue-Manatee
-A gentle aquatic planet where there is no war or work. This planet is dominantly filled with slow 
+A gentle aquatic planet where there is no war or work. This planet is dominantly filled with friendly 
 sealife like starfish, manatees and seacucumbers. No sharks live here. All life here is slow and
 peaceful. The inhabitants of this planet simply love grazing on food and basking out in the sun.
 The only stressful thing these residents have to worry about is simply getting to things on-time.
+If anything were to befall this peaceful planet... Iron Man-atee will save them!
 
-4. planetFOUR =
+4. planetFOUR = Dumble-dope
+Magic... moons... and mystical things. Here is the part where I rhyme because it's like we are
+spell-casting things. This planet obviously makes magic but unfourtunately sometimes the outcomes
+end up tragic. This is the furthest planet, far away, but all these mythical creatures are here to
+stay.
 
 5. planetFIVE =
 
 =================================================================
 >> RESOURCES REDEFINED <<
 =================================================================
-Notes: Each planet will choose a max FOUR resouces (some will have less) that will make up the planets unique resource table.
-Resource table will have a MAX of two in each collumn. Each planet will require ONE resource they
-need except main planet. Cat-a-strophic planet needs only (3) counts TOTAL food item (they will start
-off with vegtables for demo gameplay to go faster). Either one of each or mutiples of the same to reach
-three. For other planets they only have ONE reqirement to fill but if we had more time it would be more
-than one. I will make example tables of a planets unique resource table. VALUES already labeled. 
-You may change the amount of values for planets if you don't like it. :)
+Notes: Each planet will choose a max FOUR resouces (some will have less) that will make up the planets
+unique resource table. Resource table will have a MAX of two in each collumn. Each planet will require
+ONE resource they need except main planet. Cat-a-strophic planet needs only (3) counts TOTAL food item
+(they will start off with vegtables for demo gameplay to go faster). Either one of each or mutiples of
+the same to reach three. For other planets they only have ONE reqirement to fill but if we had more time
+it would be more than one. I will make example tables of a planets unique resource table. VALUES already
+labeled. Also note, you may trade with a planet even though you aren't giving them items they need. You
+may change the amount of values for planets if you don't like it. :)
 
 > Food <
 1. FoodONE - Meat
@@ -81,10 +88,10 @@ You may change the amount of values for planets if you don't like it. :)
 > Unique Resouces <
 1. UniqueONE - Medicine
 2. UniqueTWO - Technology (information sharing)
-3. UniqueTHREE - Magic (used to double up item)
+3. UniqueTHREE - Magic (used to double up an item)
 
 =================================================================
->> PLANET RESOURCE TABLES <<
+>> PLANET TRADING RESOURCE TABLES <<
 =================================================================
 
 planetONE = Cat-a-strophic Chaos
@@ -123,5 +130,19 @@ planetTHREE = Hue-Manatee
 > NEEDED ITEMS <
 1. EnergyTWO - Fuel
 
+==============================================================
+
+planetFOUR = Dumble-dope
+
+> INVENTORY ITEMS <
+1. FoodONE - Meat
+2. EnergyTHREE - Money
+3. UniqueTHREE - Magic
+4. UniqueTWO - Technology
+
+> NEEDED ITEMS <
+1. uniqueONE = Medicine
+
+==============================================================
 
 
