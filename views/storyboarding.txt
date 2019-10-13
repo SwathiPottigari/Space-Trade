@@ -42,9 +42,16 @@ Notes: Planets with intro text.
 Originally known as Lab-ra-cadabra-dor is inhabited buy both Cats and Dogs. Tensions currently remain
 high as the cat population increased steadily and caused a scarcity of food resources among the inhabitants.
 
-2. planetTWO = 
+2. planetTWO = Deja Moo
+Simply a farm planet where there are no humans. All laws and trade are controlled by alpha pigs. The 
+pigs dictate the way of living by having high taxes. Each animal must contribute a personal resource
+once a week which the pigs trade internationally for money. What greedy pigs!
 
-3. planetTHREE =
+3. planetTHREE = Hue-Manatee
+A gentle aquatic planet where there is no war or work. This planet is dominantly filled with slow 
+sealife like starfish, manatees and seacucumbers. No sharks live here. All life here is slow and
+peaceful. The inhabitants of this planet simply love grazing on food and basking out in the sun.
+The only stressful thing these residents have to worry about is simply getting to things on-time.
 
 4. planetFOUR =
 
@@ -53,10 +60,13 @@ high as the cat population increased steadily and caused a scarcity of food reso
 =================================================================
 >> RESOURCES REDEFINED <<
 =================================================================
-Notes: Each planet will choose FOUR resouces that will make up the planets unique resource table. You
-can pick a max of two in each collumn. Each planet will require ONE resource they need. If we had more
-time it would be more than one. I will make example tables of a planets unique resource table. You may
-change values if you don't like it. :)
+Notes: Each planet will choose FOUR resouces that will make up the planets unique resource table.
+Resource table will have a MAX of two in each collumn. Each planet will require ONE resource they
+need except main planet. Cat-a-strophic planet needs only (3) counts TOTAL food item (they will start
+off with vegtables for demo gameplay to go faster). Either one of each or mutiples of the same to reach
+three. For other planets they only have ONE reqirement to fill but if we had more time it would be more
+than one. I will make example tables of a planets unique resource table. VALUES already labeled. 
+You may change the amount of values for planets if you don't like it. :)
 
 > Food <
 1. FoodONE - Meat
@@ -77,9 +87,34 @@ change values if you don't like it. :)
 >> PLANET RESOURCE TABLES <<
 =================================================================
 
-planetONE - Cat-a-strophic Chaos
+planetONE = Cat-a-strophic Chaos
 
-1.
+> INVENTORY ITEMS <
+1. foodTWO = vegtables
+2. energyTWO = fuel <--- goverment funded us tons of extra fuel for resource fund/trade
+3. energyTHREE = Money
+4. uniqueONE = Medicine
+
+> NEEDED ITEMS <
+1. FoodONE = Meat
+2. FoodTWO = Seafood
+
+================================================================
+
+planetTWO = Deja Moo
+
+> INVENTORY ITEMS <
+1. FoodONE - Meat
+2. FoodTWO - Vegtables
+3. FoodTHREE - Seafood
+4. EnergyONE - Water
+
+> NEEDED ITEMS <
+1. EnergyTHREE - Money
+
+===============================================================
+
+
 
 
 
