@@ -2,7 +2,7 @@
 
 
 // For testing the api call
-$("#test").click(function () {
+// $("#test").click(function () {
     // var data = {
     //     name: "Test",
     //     difficulty: "Easy",
@@ -69,22 +69,22 @@ $("#test").click(function () {
     // saveGame(data);
 
     // To test to get  the data by Id
-   var data="Test";
-    getById(data);
-});
+//    var data="Test";
+//     getById(data);
+// });
 
-function saveGame(authorData) {
-    $.post("/api/savegame", authorData)
-        .then(function (result) {
-            alert("done");
-        });
-}
-function getById(authorData) {
-    $.get("/api/getByUserId/"+authorData)
-        .then(function (result) {
-            alert("done");
-        });
-}
+// function saveGame(authorData) {
+//     $.post("/api/savegame", authorData)
+//         .then(function (result) {
+//             alert("done");
+//         });
+// }
+// function getById(authorData) {
+//     $.get("/api/getByUserId/"+authorData)
+//         .then(function (result) {
+//             alert("done");
+//         });
+// }
 
 // $(document).ready(function() {
 //     startGame();
