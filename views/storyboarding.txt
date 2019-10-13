@@ -60,7 +60,7 @@ The only stressful thing these residents have to worry about is simply getting t
 =================================================================
 >> RESOURCES REDEFINED <<
 =================================================================
-Notes: Each planet will choose FOUR resouces that will make up the planets unique resource table.
+Notes: Each planet will choose a max FOUR resouces (some will have less) that will make up the planets unique resource table.
 Resource table will have a MAX of two in each collumn. Each planet will require ONE resource they
 need except main planet. Cat-a-strophic planet needs only (3) counts TOTAL food item (they will start
 off with vegtables for demo gameplay to go faster). Either one of each or mutiples of the same to reach
@@ -74,13 +74,13 @@ You may change the amount of values for planets if you don't like it. :)
 3. FoodTHREE - Seafood
 --------------------------------------------
 > Energy Types <
-1. EnergyONE - Water
+1. EnergyONE - Water (drinking water)
 2. EnergyTWO - Fuel
 3. EnergyTHREE - Money <--- This mechanic is necessary because we can trade ITEMS for Money
 --------------------------------------------
 > Unique Resouces <
 1. UniqueONE - Medicine
-2. UniqueTWO - Technology
+2. UniqueTWO - Technology (information sharing)
 3. UniqueTHREE - Magic (used to double up item)
 
 =================================================================
@@ -114,7 +114,14 @@ planetTWO = Deja Moo
 
 ===============================================================
 
+planetTHREE = Hue-Manatee
 
+> INVENTORY ITEMS <
+1. FoodTHREE - Seafood
+2. EnergyTHREE - Money
+3. UniqueONE - Medicine
+> NEEDED ITEMS <
+1. EnergyTWO - Fuel
 
 
 
