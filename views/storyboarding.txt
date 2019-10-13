@@ -1,4 +1,4 @@
->>Storyboarding<<
+>> Storyboarding <<
 ================================================================
 Notes: Need somesort of intro cat to be telling story dialog.
 ================================================================
@@ -8,19 +8,78 @@ Welcome to the galaxy called the Copernicus Nebula. It may appear to be beautifu
 above but this is the furthest thing from the truth. Over 100 years ago there was a meteor that made a
 devastating impact on planet of cats.
 **INTRO TEXT SLIDE TWO**
-Within hours after the impact the planet was showing signs of a total ecosystem collapse. The air became
+Within hours after the impact the planet was showing signs of a total ecological collapse. The air became
 thin and hard to breathe and all the vegatation around was starting to decay. Surviving cats on the
 planet knew that evacuating their home was no longer an optional choice they had to make.
 **INTRO TEXT SLIDE THREE**
 The closest neighboring planet so happened to be inhabited by dogs, showed up in droves of cargo ships
 ready to evacuate the cats to safety. Since the kind gesture to house the surviving cats, life on the
-dog planet has not been the same. Resources have become scarce and tentions between the two races have
-been high.
+dog planet has not been the same. The planet was renamed "Cat-a-strophic Chaos", resources have become
+scarce and tentions between the two races have been high.
 **INTRO TEXT SLIDE FOUR**
 The galatic federation has decided to test fund a new project to secure resources. If the test project
 is sucessful they will offically have a program to procure and redistribute resources from across the
 galaxy. The federation has chosen YOU out of many applicants.
 **INTRO TEXT SLIDE FIVE**
-Do you accept this mission?
+Do you understand this mission?
     Yes?        No?
+
+**IF YES INTRO DIAGLOG**
+We are pleased that you understand the imporance of this mission. We give you starting funds and fuel
+to start you off on your jouney. It is imporant for you to travel far and wide to find more sustainable
+food resources by trade. The whole planet of Cat-a-strophic Chaos is relying on YOU!
+
+**IF NO REPEAT SLIDE FOUR**
+
+
+=================================================================
+>> PLANETS <<
+=================================================================
+
+Notes: Planets with intro text.
+
+1. planetONE = Cat-a-trophic Chaos
+Originally known as Lab-ra-cadabra-dor is inhabited buy both Cats and Dogs. Tensions currently remain
+high as the cat population increased steadily and caused a scarcity of food resources among the inhabitants.
+
+2. planetTWO = 
+
+3. planetTHREE =
+
+4. planetFOUR =
+
+5. planetFIVE =
+
+=================================================================
+>> RESOURCES REDEFINED <<
+=================================================================
+Notes: Each planet will choose FOUR resouces that will make up the planets unique resource table. You
+can pick a max of two in each collumn. Each planet will require ONE resource they need. If we had more
+time it would be more than one. I will make example tables of a planets unique resource table. You may
+change values if you don't like it. :)
+
+> Food <
+1. FoodONE - Meat
+2. FoodTWO - Vegtables
+3. FoodTHREE - Seafood
+--------------------------------------------
+> Energy Types <
+1. EnergyONE - Water
+2. EnergyTWO - Fuel
+3. EnergyTHREE - Money <--- This mechanic is necessary because we can trade ITEMS for Money
+--------------------------------------------
+> Unique Resouces <
+1. UniqueONE - Medicine
+2. UniqueTWO - Technology
+3. UniqueTHREE - Magic (used to double up item)
+
+=================================================================
+>> PLANET RESOURCE TABLES <<
+=================================================================
+
+planetONE - Cat-a-strophic Chaos
+
+1.
+
+
 
