@@ -2,79 +2,80 @@
 
 
 // For testing the api call
-// $("#test").click(function () {
-//     var data = {
-//         name: "Test",
-//         difficulty: "Easy",
-//         planets: [
-//             {
-//                 id: 1,
-//                 resources: [{
-//                     id:20,
-//                     count: 20
-//                 }, {
-//                     count: 20
-//                 }
-//                 ],
-//                 happinessCount: 20,
-//                 isHappy: true
-//             },
-//             {
-//                 id: 5,
-//                 resources: [{
-//                     id:20,
-//                     count: 20
-//                 },
-//                 {
-//                     id:20,
-//                     count: 20
-//                 }
-//                 ],
-//                 happinessCount: 30,
-//                 isHappy: false,
-//             },
-//             {
-//                 id: 2,
-//                 resources: [{
-//                     id:20,
-//                     count: 30
-//                 },
-//                 {
-//                     id:20,
-//                     count: 30
-//                 }
-//                 ],
-//                 happinessCount: 30,
-//                 isHappy: true,
-//             },
-//             {
-//                 id: 3,
-//                 resources: [{
-//                     id:20,
-//                     count: 40
-//                 },
-//                 {
-//                     id:20,
-//                     count: 40
-//                 }
-//                 ],
-//                 happinessCount: 80,
-//                 isHappy: true,
-//             }
-//         ],
+$("#test").click(function () {
+    var data = {
+        name: "Test",
+        difficulty: "Easy",
+        planets: [
+            {
+                id: 1,
+                resources: [{
+                    id:20,
+                    count: 10
+                }, {
+                    id:30,
+                    count: 20
+                }
+                ],
+                happinessCount: 20,
+                isHappy: true
+            },
+            {
+                id: 5,
+                resources: [{
+                    id:20,
+                    count: 30
+                },
+                {
+                    id:20,
+                    count: 40
+                }
+                ],
+                happinessCount: 30,
+                isHappy: false,
+            },
+            {
+                id: 2,
+                resources: [{
+                    id:20,
+                    count: 50
+                },
+                {
+                    id:20,
+                    count: 60
+                }
+                ],
+                happinessCount: 30,
+                isHappy: true,
+            },
+            {
+                id: 3,
+                resources: [{
+                    id:20,
+                    count: 70
+                },
+                {
+                    id:20,
+                    count: 80
+                }
+                ],
+                happinessCount: 80,
+                isHappy: true,
+            }
+        ],
 
-//         isWon: false
-//     };
-//     alert(data)
-//     saveGame(data);
-// });
+        isWon: false
+    };
+    alert(data)
+    saveGame(data);
+});
 
-// function saveGame(authorData) {
-//     $.post("/api/savegame", authorData)
-//         .then(function (result) {
-//             alert("done");
-//         });
-// }
+function saveGame(authorData) {
+    $.post("/api/savegame", authorData)
+        .then(function (result) {
+            alert("done");
+        });
+}
 
 // $(document).ready(function() {
 //     startGame();
