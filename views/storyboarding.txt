@@ -1,6 +1,26 @@
-**Storyboarding**
-(DRAFT)
-Over 100 years ago in the galxaxy called ___ nebula. There was a huge meteor that impacted a planet called _____ was severely distroyed. 
-The huge gash from the meteor impacted the inner core causing all the vegatation and life force to slowly die. The nearest plannet
-decided to take all the survivors into their home planet. Since then the two merged plannets have been trying to live cohesively together but
-has resulted in a scarsity of resrouces. The government has decided to invest in an adventurer to explore and secure resources for the betterment of the rest of society.
+>>Storyboarding<<
+================================================================
+Notes: Need somesort of intro cat to be telling story dialog.
+================================================================
+
+**INTRO TEXT SLIDE ONE**
+Welcome to the galaxy called the Copernicus Nebula. It may appear to be beautiful and peaceful from up
+above but this is the furthest thing from the truth. Over 100 years ago there was a meteor that made a
+devastating impact on planet of cats.
+**INTRO TEXT SLIDE TWO**
+Within hours after the impact the planet was showing signs of a total ecosystem collapse. The air became
+thin and hard to breathe and all the vegatation around was starting to decay. Surviving cats on the
+planet knew that evacuating their home was no longer an optional choice they had to make.
+**INTRO TEXT SLIDE THREE**
+The closest neighboring planet so happened to be inhabited by dogs, showed up in droves of cargo ships
+ready to evacuate the cats to safety. Since the kind gesture to house the surviving cats, life on the
+dog planet has not been the same. Resources have become scarce and tentions between the two races have
+been high.
+**INTRO TEXT SLIDE FOUR**
+The galatic federation has decided to test fund a new project to secure resources. If the test project
+is sucessful they will offically have a program to procure and redistribute resources from across the
+galaxy. The federation has chosen YOU out of many applicants.
+**INTRO TEXT SLIDE FIVE**
+Do you accept this mission?
+    Yes?        No?
+
