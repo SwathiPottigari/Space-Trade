@@ -68,7 +68,7 @@
     // };
     // saveGame(data);
 
-    // To test to get  the data by Id
+//     To test to get  the data by Id
 //    var data="Test";
 //     getById(data);
 // });
@@ -82,7 +82,8 @@
 // function getById(authorData) {
 //     $.get("/api/getByUserId/"+authorData)
 //         .then(function (result) {
-//             alert("done");
+//             console.log(result);
+//             alert(result);
 //         });
 // }
 

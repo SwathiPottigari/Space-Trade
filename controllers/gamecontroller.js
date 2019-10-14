@@ -32,6 +32,7 @@ router.get("/api/getInitialGame", function (req, res) {
 
 // Retrieves the data depending on the User ID
 router.get("/api/getByUserId/:name", function (req, res) {
+    var object={};
     db.User.findOne({
         where: {
             name: req.params.name
@@ -73,8 +74,9 @@ router.get("/api/getByUserId/:name", function (req, res) {
                     delete planets[i].GameStateResources;
                 }
                 queryData.planets = planets;
+                res.json(queryData);
             })
-        });
+        });      
     })
 });
 
@@ -102,6 +104,7 @@ router.post("/api/savegame", function (req, res) {
             id = user.dataValues.id;
             saveGameData(id, req);
         }
+        res.end();
     });
 });
 
