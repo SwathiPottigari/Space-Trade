@@ -1,5 +1,16 @@
-// Create five planets to be displayed in the play area
+$(document).ready(function () {
+    console.log("play area loaded");
 
+    drawPlanet1();
+    drawPlanet2();
+    drawPlanet3();
+    drawPlanet4();
+    drawPlanet5();
+});
+
+// Create cargo ship game piece
+
+// Create five planets to be displayed in the play area
 function drawPlanet1() {
 
     var c = document.getElementById("myCanvas");
@@ -14,7 +25,7 @@ function drawPlanet1() {
         // Planet 1
         ctx.beginPath();
         ctx.fillStyle = ptrn;
-        ctx.arc(800, 90, 45, 0, 2 * Math.PI);
+        ctx.arc(100, 100, 50, 0, 2 * Math.PI);
         ctx.fill();
         ctx.closePath();
     };
@@ -32,7 +43,7 @@ function drawPlanet2() {
         // Planet 2
         ctx.beginPath();
         ctx.fillStyle = ptrn;
-        ctx.arc(100, 440, 50, 0, 2 * Math.PI);
+        ctx.arc(850, 100, 50, 0, 2 * Math.PI);
         ctx.fill();
         ctx.closePath();
     };
@@ -50,7 +61,7 @@ function drawPlanet3() {
         // Planet 3
         ctx.beginPath();
         ctx.fillStyle = ptrn;
-        ctx.arc(150, 100, 60, 0, 2 * Math.PI);
+        ctx.arc(475, 270, 70, 0, 2 * Math.PI);
         ctx.fill();
         ctx.closePath();
     };
@@ -68,7 +79,7 @@ function drawPlanet4() {
         // Planet 4
         ctx.beginPath();
         ctx.fillStyle = ptrn;
-        ctx.arc(460, 260, 70, 0, 2 * Math.PI);
+        ctx.arc(100, 440, 50, 0, 2 * Math.PI);
         ctx.fill();
         ctx.closePath();
     };
@@ -86,14 +97,8 @@ function drawPlanet5() {
         // Planet 5
         ctx.beginPath();
         ctx.fillStyle = ptrn;
-        ctx.arc(850, 450, 75, 0, 2 * Math.PI);
+        ctx.arc(850, 440, 50, 0, 2 * Math.PI);
         ctx.fill();
         ctx.closePath();
     };
 };
-
-drawPlanet1();
-drawPlanet2();
-drawPlanet3();
-drawPlanet4();
-drawPlanet5();
