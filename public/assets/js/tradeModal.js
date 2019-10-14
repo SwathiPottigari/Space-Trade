@@ -1,7 +1,8 @@
 //get data
 //create modal with data
-
+//dummy data for development
 let planet1 = {
+    name: "Moo-Ville",
     traderName: "Bill",
     resources: [
         {
@@ -42,7 +43,7 @@ modal.append(modalDialog);
 var modalContent = $("<div>").addClass("modal-content");
 modalDialog.append(modalContent);
 var modalHeader = $('<h5>').addClass("modal-header");
-modalHeader.text("PLANET NAME HERE");
+modalHeader.text(`Welcome to ${planet1.name}, would you like to trade?`);
 modalContent.append(modalHeader);
 var dismissButton = $('<button>').addClass("close");
 dismissButton.attr("data-dismiss","modal");
@@ -53,8 +54,6 @@ dismissSpan.text("Close")
 dismissButton.append(dismissSpan);
 modalHeader.append(dismissButton);
 var modalBody = $('<div>').addClass("modal-body");
-
-
 
 planet1.resources.forEach(resource => {
     console.log("Here...")
@@ -72,8 +71,6 @@ planet1.resources.forEach(resource => {
 modalContent.append(modalBody);
 
 div.append(modal);
-
-
 
 $("#modalDisplay").click(function(){
     modal.modal();
