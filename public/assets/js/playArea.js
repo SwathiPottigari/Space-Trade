@@ -1,3 +1,5 @@
+// Loads play area to browser
+
 $(document).ready(function () {
     console.log("play area loaded");
     drawShip();
@@ -8,13 +10,11 @@ $(document).ready(function () {
     drawPlanet5();
 });
 
-// Create cargo ship game piece
+// Create space ship game piece
 
 function drawShip() { 
-
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
- 
     // Draw saucer bottom. 
     ctx.beginPath(); 
     ctx.moveTo(28.4, 16.9); 
@@ -25,7 +25,6 @@ function drawShip() {
     ctx.closePath(); 
     ctx.fillStyle = "salmon"; 
     ctx.fill(); 
-
     // Draw saucer top. 
     ctx.beginPath(); 
     ctx.moveTo(22.3, 12.0); 
@@ -34,23 +33,25 @@ function drawShip() {
     ctx.bezierCurveTo(9.6, 10.8, 12.4, 9.7, 15.9, 9.7); 
     ctx.bezierCurveTo(19.4, 9.7, 22.3, 10.8, 22.3, 12.0); 
     ctx.closePath(); 
-    ctx.fillStyle = "pink"; 
+    ctx.fillStyle = "aquamarine"; 
     ctx.fill();
 };
 
-// Create five planets to be displayed in the play area
-function drawPlanet1() {
+// Move ship using arrow keys
 
+
+
+// Create five planets to be displayed in the play area
+
+// Planet 1
+function drawPlanet1() {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
-
     // Create new image object to use as pattern
     var img = new Image();
     img.src = 'https://art.pixilart.com/thumb/0ad802cc8e094bc.png';
     img.onload = function () {
-
         var ptrn = ctx.createPattern(img, 'repeat');
-        // Planet 1
         ctx.beginPath();
         ctx.fillStyle = ptrn;
         ctx.arc(100, 100, 50, 0, 2 * Math.PI);
@@ -59,6 +60,7 @@ function drawPlanet1() {
     };
 };
 
+// Planet 2
 function drawPlanet2() {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
@@ -66,9 +68,7 @@ function drawPlanet2() {
     var img = new Image();
     img.src = 'https://art.pixilart.com/thumb/89e2640b5351c53.png';
     img.onload = function () {
-
         var ptrn = ctx.createPattern(img, 'repeat');
-        // Planet 2
         ctx.beginPath();
         ctx.fillStyle = ptrn;
         ctx.arc(850, 100, 50, 0, 2 * Math.PI);
@@ -77,6 +77,7 @@ function drawPlanet2() {
     };
 };
 
+// Planet 3
 function drawPlanet3() {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
@@ -84,9 +85,7 @@ function drawPlanet3() {
     var img = new Image();
     img.src = 'https://art.pixilart.com/thumb/248848f0a2e9b95.png';
     img.onload = function () {
-
         var ptrn = ctx.createPattern(img, 'repeat');
-        // Planet 3
         ctx.beginPath();
         ctx.fillStyle = ptrn;
         ctx.arc(475, 270, 70, 0, 2 * Math.PI);
@@ -95,6 +94,7 @@ function drawPlanet3() {
     };
 };
 
+// Planet 4
 function drawPlanet4() {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
@@ -102,9 +102,7 @@ function drawPlanet4() {
     var img = new Image();
     img.src = 'https://art.pixilart.com/thumb/4e5dd828ad85087.png';
     img.onload = function () {
-
         var ptrn = ctx.createPattern(img, 'repeat');
-        // Planet 4
         ctx.beginPath();
         ctx.fillStyle = ptrn;
         ctx.arc(100, 440, 50, 0, 2 * Math.PI);
@@ -113,6 +111,7 @@ function drawPlanet4() {
     };
 };
 
+// Planet 5
 function drawPlanet5() {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
@@ -120,9 +119,7 @@ function drawPlanet5() {
     var img = new Image();
     img.src = 'https://art.pixilart.com/d54aecfdf01cf9c.png';
     img.onload = function () {
-
         var ptrn = ctx.createPattern(img, 'repeat');
-        // Planet 5
         ctx.beginPath();
         ctx.fillStyle = ptrn;
         ctx.arc(850, 440, 50, 0, 2 * Math.PI);
