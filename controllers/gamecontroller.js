@@ -22,79 +22,58 @@ router.get("/", function (req, res) {
 
 // Retrieves the data required by initial game
 router.post("/api/getInitialGame", function (req, res) {
-    // db.Planet.findAll({
-    //     include: [db.Resource]
-    // }).then(function (dbResult) {
-    //     res.json(dbResult);
-    // });
-    console.log("Entered");
     createGame(req,res);
 
 });
 
 
 // Retrieves the data depending on the User ID
-router.get("/api/getByUserId/:name", function (req, res) {
+router.get("/api/getByUserId/:id", function (req, res) {
     var object = {};
-    db.User.findOne({
-        where: {
-            name: req.params.name
-        }
-    }).then(function (resDB) {
+    // db.User.findOne({
+    //     where: {
+    //         id: req.params.id
+    //     }
+    // }).then(function (resDB) {
         // db.Game.findOne
         var queryData = {};
-        var user = resDB;
+        // var user = resDB;
         db.Game.findAll({
             limit: 1,
             where: {
-                UserId: user.dataValues.id
+                UserId:req.params.id 
             },
             order: [['id', 'DESC']],
         }).then(function (gameRes) {
+            console.log(gameRes);
             var data = gameRes;
             queryData.game = data[0].dataValues;
-            db.GamesState.findAll({
-                limit: 5,
+            db.GamesState.findAll({                
                 raw: false,
                 where: {
                     GameId: data[0].dataValues.id
                 },
                 order: [['id', 'DESC']],
-                include: [db.GameStateResources]
+                include: [db.GameStateResources,db.Planet],
+                limit: 5
 
             }).then(function (gameRes) {
-
-                // console.log(gameRes[0].dataValues.GameStateResources[0].dataValues);
                 var planets = [];
                 for (var i = 0; i < gameRes.length; i++) {
                     planets[i] = gameRes[i].dataValues;
                     planets[i].Resources = [];
                     for (var j = 0; j < gameRes[i].dataValues.GameStateResources.length; j++) {
                         planets[i].Resources[j] = planets[i].GameStateResources[j].dataValues;
-                    }
-                    // db.Planet.findOne({
-                    //     where:{
-                    //         planetName:"mars"
-                    //     }
-                    // }).then(function(planetRes){
-                    //     // console.log(planetRes.dataValues);
-                    //     var planet=planetRes.dataValues;
-                    //     planets[i].name=planet.planetName;
-                    //     planets[i].planetUnique=planet.planetUnique;
-                    //     planets[i].planetFavorite=planet.planetFavorite;
-                    //     planets[i].planetTrader=planet.planetTrader;
-                    //     planets[i].planetStory=planet.planetStory;
-                    // });                    
+                    }                   
                 }
                 for (var i = 0; i < planets.length; i++) {
                     delete planets[i].GameStateResources;
                 }
                 queryData.planets = planets;
-                console.log(queryData.planets);
                 res.json(queryData);
             })
         });
-    })
+    // })
 });
 
 
@@ -110,7 +89,7 @@ function createGame(req,res){
         }
     }).then(function (resDB) {
         var id;
-        console.log(resDB);
+        // console.log(resDB);
         if (resDB === null) {
             db.User.create({
                 name: req.body.name
@@ -118,14 +97,15 @@ function createGame(req,res){
                 var user = dbResult;
                 id = user.dataValues.id;
                 saveGameData(id, req);
+                res.json(id);
             }).catch(function (err) { throw err });
         }
         else {
             var user = resDB;
             id = user.dataValues.id;
-            saveGameData(id, req);
-        }
-        res.end();
+            saveGameData(id,req,res);
+            res.json(id);
+        }        
     });
 };
 
@@ -147,6 +127,7 @@ function saveGameData(userId, req) {
                 PlanetId: req.body.planets[i].id
             }).then(function (dbGameStats) {
                 var stats = dbGameStats;
+                console.log(stats);
                 // console.log("enterd the loop---" + k);
                 for (var j = 0; j < req.body.planets[k].resources.length; j++) {
                     db.GameStateResources.create({

@@ -6,7 +6,7 @@
 // For testing the api call
 // $("#test").click(function () {
 //     var data = {
-//         name: "Test",
+//         name: "Test33",
 //         difficulty: "Easy",
 //         isWon: false,
 //         planets: [
@@ -15,27 +15,27 @@
 //                 resources: [{
 //                     id:20,
 //                     resName:"fish",
-//                     count: 10
+//                     resCount: 10
 //                 }, {
 //                     id:30,
 //                     resName:"fish",
-//                     count: 20
+//                     resCount: 20
 //                 }
 //                 ],
 //                 happinessCount: 20,
 //                 isHappy: true
 //             },
 //             {
-//                 id: 5,
+//                 id: 4,
 //                 resources: [{
 //                     id:20,
 //                     resName:"choc",
-//                     count: 30
+//                     resCount: 30
 //                 },
 //                 {
 //                     id:20,
 //                     resName:"choc",
-//                     count: 40
+//                     resCount: 40
 //                 }
 //                 ],
 //                 happinessCount: 30,
@@ -46,12 +46,12 @@
 //                 resources: [{
 //                     id:20,
 //                     resName:"water",
-//                     count: 50
+//                     resCount: 50
 //                 },
 //                 {
 //                     id:20,
 //                     resName:"water",
-//                     count: 60
+//                     resCount: 60
 //                 }
 //                 ],
 //                 happinessCount: 30,
@@ -62,12 +62,12 @@
 //                 resources: [{
 //                     id:20,
 //                     resName:"ice",
-//                     count: 70
+//                     resCount: 70
 //                 },
 //                 {
 //                     id:20,
 //                     resName:"ice",
-//                     count: 80
+//                     resCount: 80
 //                 }
 //                 ],
 //                 happinessCount: 80,
@@ -78,15 +78,16 @@
 //     };
 //     saveGame(data);
 
-//     // To test to get  the data by Id
-// //    var data="Test";
-// //     getById(data);
+    // To test to get  the data by Id
+//    var data="Test";
+//     getById(data);
 // });
 
 // function saveGame(authorData) {
 //     $.post("/api/getInitialGame", authorData)
 //         .then(function (result) {
-//             alert("done");
+//             alert(result);
+//             getById(result);
 //         });
 // }
 // function getById(authorData) {
