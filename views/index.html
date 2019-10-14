@@ -15,7 +15,8 @@
     </style>
 
     <title>Space Trader</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
@@ -26,8 +27,38 @@
 
     <!-- Canvas for displaying playArea.js -->
     <canvas id="myCanvas" width="960" height="540"></canvas>
-    
 
+
+    <!--HUD-->
+    <footer class="footer" style="background-color:salmon; height: 120px;">
+        <div class="row">
+            <div class="col-md-1">
+                <p class="text-center">Portrait</p>
+            </div>
+            <div class="col-md-2">
+                <img src="https://placekitten.com/g/100/100" style="margin-top: 10px">
+            </div>
+            <div class="col-md-1">
+                <p>Cargo Hold</p>
+            </div>
+            <div class="col-md-2">
+                <img src="https://placekitten.com/g/150/100" style="margin-top: 10px">
+            </div>
+            <div class="col-md-1">
+                <p class="text-center">Fuel</p>
+            </div>
+            <div class="col-md-2">
+                <img  class="text-center" src="https://placekitten.com/g/100/20" style="margin-top: 10px">
+            </div>
+            <div class="col-md-1">
+                <p>Money</p>
+            </div>
+            <div class="col-md-2"> 
+                <img src="https://placekitten.com/g/100/100" style="margin-top: 10px">
+            </div>
+
+        </div>
+    </footer>
     <script src="assets/js/playArea.js"></script>
 
 </body>
