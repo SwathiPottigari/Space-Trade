@@ -61,7 +61,10 @@ spell-casting things. This planet obviously makes magic but unfourtunately somet
 end up tragic. This is the furthest planet, far away, but all these mythical creatures are here to
 stay.
 
-5. planetFIVE =
+5. planetFIVE = Ice-olated
+Nothing but hard ice for miles away. At first glance during the day it seems like a desolate place
+with absolutly no inhabitants but on closer inspection there are pengins hiding all over the place.
+During the night, almost every night, every animal of all races compete in competitive ice skating!
 
 =================================================================
 >> RESOURCES REDEFINED <<
@@ -143,6 +146,15 @@ planetFOUR = Dumble-dope
 > NEEDED ITEMS <
 1. uniqueONE = Medicine
 
-==============================================================
+===============================================================
+
+planetFIVE = Ice-olated
+1.  EnergyONE - Water
+2.  FoodTHREE - Seafood
+3.  EnergyTWO - Fuel
+> NEEDED ITEMS <
+1.  FoodTWO - Vegtables
+
+===============================================================
 
 
