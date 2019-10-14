@@ -78,17 +78,17 @@ it would be more than one. I will make example tables of a planets unique resour
 labeled. Also note, you may trade with a planet even though you aren't giving them items they need. You
 may change the amount of values for planets if you don't like it. :)
 
-> Food <
+> foodType <
 1. FoodONE - Meat
 2. FoodTWO - Vegtables
 3. FoodTHREE - Seafood
 --------------------------------------------
-> Energy Types <
+> energyType <
 1. EnergyONE - Water (drinking water)
 2. EnergyTWO - Fuel
 3. EnergyTHREE - Money <--- This mechanic is necessary because we can trade ITEMS for Money
 --------------------------------------------
-> Unique Resouces <
+> uniqueResouces <
 1. UniqueONE - Medicine
 2. UniqueTWO - Technology (information sharing)
 3. UniqueTHREE - Magic (used to double up an item)
