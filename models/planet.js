@@ -34,12 +34,14 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Planet.associate = function (models) {
-      Planet.belongsTo(models.Resource,{
-          foreignKey: {
-              allowNull: false
-          }
-      });
+      // Planet.belongsTo(models.Resource,{
+      //     foreignKey: {
+      //         allowNull: false
+      //     }
+      // });
+      Planet.hasMany(models.GamesState);
   };
+ 
 
     return Planet;
   };

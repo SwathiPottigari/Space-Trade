@@ -1,10 +1,6 @@
 module.exports=function(sequelize, DataTypes){
 
     var GamesState=sequelize.define("GamesState",{
-        planetId:{
-            type:DataTypes.INTEGER,
-            allowNull: false
-        },
         happinessCount:{
             type:DataTypes.INTEGER,
             allowNull: false,
@@ -14,12 +10,7 @@ module.exports=function(sequelize, DataTypes){
             type:DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue:false
-        },
-        isWon:{
-            type:DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue:false
-        }
+        }        
     });
 
     GamesState.associate = function (models) {
@@ -31,6 +22,12 @@ module.exports=function(sequelize, DataTypes){
         GamesState.hasMany(models.GameStateResources, {
             onDelete: "cascade"
         });
+        GamesState.belongsTo(models.Planet, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+       
     };
 
 

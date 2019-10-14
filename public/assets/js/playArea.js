@@ -1,80 +1,90 @@
+// import { finished } from "stream";
+
 // Create five planets to be displayed in the play area
 
 
 // For testing the api call
 // $("#test").click(function () {
-    // var data = {
-    //     name: "Test",
-    //     difficulty: "Easy",
-    //     planets: [
-    //         {
-    //             id: 1,
-    //             resources: [{
-    //                 id:20,
-    //                 count: 10
-    //             }, {
-    //                 id:30,
-    //                 count: 20
-    //             }
-    //             ],
-    //             happinessCount: 20,
-    //             isHappy: true
-    //         },
-    //         {
-    //             id: 5,
-    //             resources: [{
-    //                 id:20,
-    //                 count: 30
-    //             },
-    //             {
-    //                 id:20,
-    //                 count: 40
-    //             }
-    //             ],
-    //             happinessCount: 30,
-    //             isHappy: false,
-    //         },
-    //         {
-    //             id: 2,
-    //             resources: [{
-    //                 id:20,
-    //                 count: 50
-    //             },
-    //             {
-    //                 id:20,
-    //                 count: 60
-    //             }
-    //             ],
-    //             happinessCount: 30,
-    //             isHappy: true,
-    //         },
-    //         {
-    //             id: 3,
-    //             resources: [{
-    //                 id:20,
-    //                 count: 70
-    //             },
-    //             {
-    //                 id:20,
-    //                 count: 80
-    //             }
-    //             ],
-    //             happinessCount: 80,
-    //             isHappy: true,
-    //         }
-    //     ],
+//     var data = {
+//         name: "Test",
+//         difficulty: "Easy",
+//         isWon: false,
+//         planets: [
+//             {
+//                 id: 1,
+//                 resources: [{
+//                     id:20,
+//                     resName:"fish",
+//                     count: 10
+//                 }, {
+//                     id:30,
+//                     resName:"fish",
+//                     count: 20
+//                 }
+//                 ],
+//                 happinessCount: 20,
+//                 isHappy: true
+//             },
+//             {
+//                 id: 5,
+//                 resources: [{
+//                     id:20,
+//                     resName:"choc",
+//                     count: 30
+//                 },
+//                 {
+//                     id:20,
+//                     resName:"choc",
+//                     count: 40
+//                 }
+//                 ],
+//                 happinessCount: 30,
+//                 isHappy: false,
+//             },
+//             {
+//                 id: 2,
+//                 resources: [{
+//                     id:20,
+//                     resName:"water",
+//                     count: 50
+//                 },
+//                 {
+//                     id:20,
+//                     resName:"water",
+//                     count: 60
+//                 }
+//                 ],
+//                 happinessCount: 30,
+//                 isHappy: true,
+//             },
+//             {
+//                 id: 3,
+//                 resources: [{
+//                     id:20,
+//                     resName:"ice",
+//                     count: 70
+//                 },
+//                 {
+//                     id:20,
+//                     resName:"ice",
+//                     count: 80
+//                 }
+//                 ],
+//                 happinessCount: 80,
+//                 isHappy: true,
+//             }
+//         ],
+        
+//     };
+//     saveGame(data);
 
-    //     isWon: false
-    // };
-    // saveGame(data);
-
-//     To test to get  the data by Id
-//    var data="Test";
-//     getById(data);
+//     // To test to get  the data by Id
+// //    var data="Test";
+// //     getById(data);
 // });
 
 // function saveGame(authorData) {
-//     $.post("/api/savegame", authorData)
+//     $.post("/api/getInitialGame", authorData)
 //         .then(function (result) {
 //             alert("done");
 //         });
