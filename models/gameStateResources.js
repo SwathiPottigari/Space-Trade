@@ -1,21 +1,28 @@
 module.exports=function (sequelize, DataTypes){
     var GameStateResources=sequelize.define("GameStateResources",{
 
-        resourceId:{
-            type: DataTypes.INTEGER,
+        // resourceId:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     validate: {
+        //       len: [1]
+        //     }
+        // },
+        resName: {
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
-              len: [1]
+                len: [1]
             }
         },
-
-        count:{
+        
+        resValue: {
+            type: DataTypes.TEXT,
+        },
+        resCount: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            validate: {
-              len: [1]
-            }
-        }
+        },
     });
     
     GameStateResources.associate = function (models) {
