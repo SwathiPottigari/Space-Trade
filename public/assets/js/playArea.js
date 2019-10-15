@@ -14,7 +14,7 @@
 //             {
 //                 id: 1,
 //                 resources: [{
-//                     id:20,
+//                      resValue:20,
 //                     resName:"fish",
 //                     resCount: 10
 //                 }, {

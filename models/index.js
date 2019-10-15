@@ -16,7 +16,7 @@ if (config.use_env_variable) {
 }
 
 
-  .readdirSync(__dirname)
+  fs.readdirSync(__dirname)
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
