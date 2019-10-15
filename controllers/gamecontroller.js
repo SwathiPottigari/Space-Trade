@@ -14,11 +14,22 @@ var db = require("../models");
 
 
 router.get("/api/startPage", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    if(req.session.hasOwnProperty('user')){
+        res.sendFile(path.join(__dirname, "../views/index.html"));
+    }
+    else{
+        res.sendFile(path.join(__dirname, "../views/login.html"));
+    }
+    
 });
 
-router.get("/api/selectDifficulty", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/selectgame.html"));
+router.get("/api/selectDifficulty", function (req, res) {    
+    if(req.session.hasOwnProperty('user')){
+        res.sendFile(path.join(__dirname, "../views/selectgame.html"));
+    }
+    else{
+        res.sendFile(path.join(__dirname, "../views/login.html"));
+    }
 });
 
 
