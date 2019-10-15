@@ -21,6 +21,8 @@ button {
     background: rgba(255, 255, 255, 0.3);
     margin-top: 5%;
     margin-bottom: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #user-name {
