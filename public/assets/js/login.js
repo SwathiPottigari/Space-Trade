@@ -70,7 +70,6 @@ $("#test").click(function () {
             {
             id: planetTWO,
             // **Deja-Moo** //
-            id: planetTWO
             name: "Deja-Moo",
             resources: [{
                 resName: Food,
@@ -107,7 +106,7 @@ $("#test").click(function () {
     // =======================================================
 
             {
-           id: planetTHREE
+           id: planetTHREE,
             // **Hue-Manatee** //
             name: "Hue-Manatee",
             resources: [{
@@ -145,7 +144,7 @@ $("#test").click(function () {
     //=======================================================
 
         {
-        id: planetFOUR
+        id: planetFOUR,
             // **Dumble-dope** //
             name: "Dumble-dope",
             resources: [{
@@ -183,7 +182,7 @@ $("#test").click(function () {
     // =======================================================
 
         {
-        id: planetFIVE
+        id: planetFIVE,
             // **Ice-olated** //
             name: "Ice-olated",
             resources: [{
@@ -216,14 +215,14 @@ $("#test").click(function () {
         isHappy: true,
         uniqueGIVE: "Space Snowcones",
         uniqueGET: "Space Crystals",
-        },
+        }
+        ]}
 
     // ==========================================================================
 
-};
-saveGame(data);
+saveGame(data)
 
-To test to get the data by Id
+// To test to get the data by Id
 var data = "Test";
 getById(data);
 });
@@ -247,32 +246,32 @@ function getById(authorData) {
 // Loads play area to browser
 //  // ============================================================================
 
-$('#previous').click(function (event) {
-    alert("Hello")
-    $.get("/api/getByUserId").then(function (result) {
-        console.log(result);
-    });
-});
+// $('#previous').click(function (event) {
+//     alert("Hello")
+//     $.get("/api/getByUserId").then(function (result) {
+//         console.log(result);
+//     });
+// });
 
 
-$('#newAccountBtn').click(function (event) {
+// $('#newAccountBtn').click(function (event) {
 
-    event.preventDefault();
-    var email = $('#email').val();
-    var pword = $('#pword').val();
+//     event.preventDefault();
+//     var email = $('#email').val();
+//     var pword = $('#pword').val();
 
-    //get the start page
+//     //get the start page
 
-    userData = {
-        email: email,
-        password: pword
-    };
-    $.post("/auth/signup", userData)
-        .then(function (result) {
-            if (result.hasOwnProperty('id')) {
-                window.location = "/api/selectDifficulty";
-            } else {
-                alert("Already a member");
-            }
-        });
-})
+//     userData = {
+//         email: email,
+//         password: pword
+//     };
+//     $.post("/auth/signup", userData)
+//         .then(function (result) {
+//             if (result.hasOwnProperty('id')) {
+//                 window.location = "/api/selectDifficulty";
+//             } else {
+//                 alert("Already a member");
+//             }
+//         });
+// })
