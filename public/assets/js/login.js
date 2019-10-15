@@ -24,122 +24,118 @@ import {
     finished
 } from "stream";
 
-Create five planets to be displayed in the play area
-
-For testing the api call
 $("#test").click(function () {
     var data = {
         name: "Test33",
         difficulty: "Easy",
         isWon: false,
         planets: [{
-            id: planetONE
+            id: planetONE,
             // **Cat-a-stropohic Chaos** //
-                name: Cat-a-stropohic Chaos,
-                resources: [{
+            name: "Cat-a-stropohic Chaos",
+            resources: [{
 
                 resName: Food,
                 resCount: 5,
                 resValue: 20,
-                },
-                {
+            },
+            {
                 resName: Medicine,
                 resCount: 5,
                 resValue: 30,
-                },
-                {
+            },
+            {
                 resName: Entertainment,
                 resCount: 5,
                 resValue: 20
-                },
-                {
+            },
+            {
                 resName: Technology,
                 resCount: 5,
                 resValue: 10,
-                },
-                {
+            },
+            {
                 resName: Water,
                 resCount: 5,
-                },
-        ],
-        happinessCount: 20,
-        isHappy: true,
-    },
-        uniqueGIVE: "Space Catnip",
-        uniqueGET: "Space Fertilizer",
+                resValue: 10,
+            },
+            ],
+            happinessCount: 20,
+            isHappy: true,
+            uniqueGIVE: "Space Catnip",
+            uniqueGET: "Space Fertilizer",
+        },
+
+        // ============================================================
+
+        {
+            id: planetTWO,
+            // **Deja-Moo** //
+            id: planetTWO
+                            name: Deja - Moo,
+            resources: [{
+
+                resName: Food,
+                resCount: 5,
+                resValue: 10,
+
+                resName: Medicine,
+                resCount: 5,
+                resValue: 10,
+
+                resName: Entertainment,
+                resCount: 5,
+                resValue: 10,
+
+                resName: Technology,
+                resCount: 5,
+                resValue: 10,
+
+                resName: Water,
+                resCount: 5,
+                resValue: 10,
+            }],
+            happinessCount: 20,
+            isHappy: true
+                            },
+        uniqueGIVE: "Space Fertilizer",
+        uniqueGET: "Space Technology",
 },
-
-    // ============================================================
-
-    {
-        id: planetTWO,
-        // **Deja-Moo** //
-        id: planetTWO
-                    name: Deja - Moo,
-        resources: [{
-
-            resName: Food,
-            resCount: 5,
-
-            resID: 2,
-            resName: Medicine,
-            resCount: 5,
-
-            resName: Entertainment,
-            resCount: 5,
-
-            resName: Technology,
-            resCount: 5,
-
-            resName: Water,
-            resCount: 5,
-        };,
-        id: 1,
-        resources: [{
-            resValue: 20,
-            resName: "fish",
-            resCount: 10
-        }, {
-            id: 30,
-            resName: "fish",
-            resCount: 20
-        }],
-        happinessCount: 20,
-        isHappy: true
-    },
-    uniqueGIVE: "Space Fertilizer",
-    uniqueGET: "Space Technology",
-                },
 
     // =======================================================
 
     {
-        id: planetTHREE
-                    // **Hue-Manatee** //
-                    name: Hue - Manatee,
-        resources: [{
+           id: planetTHREE
+            // **Hue-Manatee** //
+            name: Hue - Manatee,
+            resources: [{
 
             resName: Food,
             resCount: 5,
+            resValue: 10,
 
             resName: Medicine,
             resCount: 5,
+            resValue: 10,
 
             resName: Entertainment,
             resCount: 5,
+            resValue: 10,
 
             resName: Technology,
             resCount: 5,
+            resValue: 10,
 
             resName: Water,
             resCount: 5,
+            resValue: 10,
         },],
         happinessCount: 20,
         isHappy: true
     },
     uniqueGIVE: "Space Technology",
     uniqueGET: "Space Catnip",
-        },
+                    },
 
     //=======================================================
 
@@ -147,65 +143,72 @@ $("#test").click(function () {
         id: planetFOUR
             // **Dumble-dope** //
             name: Dumble - dope,
-        resources: [{
+            resources: [{
 
             resName: Food,
             resCount: 5,
+            resValue: 10,
 
 
             resName: Medicine,
             resCount: 5,
+            resValue: 10,
 
             resName: Entertainment,
             resCount: 5,
+            resValue: 10,
 
             resName: Technology,
             resCount: 5,
+            resValue: 10,
 
             resName: Water,
             resCount: 5,
+            resValue: 10,
         },],
         happinessCount: 20,
         isHappy: true
     },
     uniqueGIVE: "Space Crystals",
     uniqueGET: "Space Snowcones",
-    },
+                },
 
     // =======================================================
 
     {
         id: planetFIVE
-        // **Ice-olated** //
-        name: Ice - olated,
-        resources: [{
+            // **Ice-olated** //
+            name: Ice - olated,
+            resources: [{
 
             resName: Food,
             resCount: 5,
+            resValue: 10,
 
             resName: Medicine,
             resCount: 5,
+            resValue: 10,
 
             resName: Entertainment,
             resCount: 5,
+            resValue: 10,
 
             resName: Technology,
             resCount: 5,
+            resValue: 10,
 
             resName: Water,
             resCount: 5,
+            resValue: 10,
         },],
         happinessCount: 20,
         isHappy: true
     },
-    uniqueGIVE: "Space Crystals",
-    uniqueGET: "Space Snowcones",
-    },
     uniqueGIVE: "Space Snowcones",
     uniqueGET: "Space Crystals",
-},
+    },
 
-// ==========================================================================
+    // ==========================================================================
 
 };
 saveGame(data);
