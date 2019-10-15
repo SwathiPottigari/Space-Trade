@@ -3,6 +3,9 @@ var express =require("express");
 var app = express();
 var db = require("./models")
 
+var session = require("express-session");
+require('dotenv').config();
+
 var PORT = process.env.PORT || 3000;
 
 var db = require("./models");
@@ -11,13 +14,13 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+var routes = require("./controllers");
+
+app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+app.use('/',routes);
+
 // Static directory
-app.use(express.static("public"));
-
-var routes = require("./controllers/gamecontroller.js");
-app.use(routes);
-
-
+app.use(express.static(__dirname + '/public'));
 
 db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
