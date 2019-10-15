@@ -1,4 +1,44 @@
-canvas {
-    border: 1px solid #d3d3d3;
-    background: url("../images/playAreaBG.gif");
+body {
+    background: url("../images/background.jpg");
+}
+
+img {
+    border:3px solid #ffffff;
+    border-radius:3px;
+}
+
+p {
+    font-family: 'Press Start 2P', cursive;
+    color: lightblue;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.map {
+    text-align: center;
+}
+
+.user-hud p{
+    color: goldenrod;
+}
+
+.money-hud p{
+    font-size: 14px;
+    color: palegoldenrod;
+}
+
+.cargo-hud p{
+    font-size: 10px;
+    color: palegoldenrod;
+}
+
+#user-img {
+    margin-bottom: 5px;
 }
