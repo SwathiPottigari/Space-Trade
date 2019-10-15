@@ -9,11 +9,9 @@ $(document).ready(function () {
 
 // The page is loaded with the data once it is rendered
 function loadPage(){
-    $.get("/api/getByUserId").then(function(result){
-        console.log("This is the data loaded");
+    $.get("/api/getByUserId").then(function(result){  
         gameLoadData = result;
         mapData(gameLoadData);
-        console.log(gameLoadData);
     });
 };
 
@@ -29,7 +27,10 @@ function calculateHappiness(data) {
 function mapData(data) {
   
   var happiness = calculateHappiness(data.planets);
-  $("#win-con").text(happiness)
+
+  $("#win-con").text(happiness);
+  $("#res-0").text(data.planets[5].Resources[0])
+
 };
 
 $("#logOut").click(function(event){

@@ -2,44 +2,13 @@ $(document).ready(function () {
     //get data
     //create modal with data
     //dummy data for development
-    let planet1 = {
-        name: "Moo-Ville",
-        traderName: "Bill",
-        resources: [
-            {
-                name: "space kitty litter",
-                id: 1,
-                amount: 10,
-                cost: 100
-            },
-            {
-                name: "space yarn",
-                id: 2,
-                amount: 40,
-                cost: 25
-            },
-            {
-                name: "space catnip",
-                id: 3,
-                amount: 20,
-                cost: 50
-            },
-            {
-                name: "space fish",
-                id: 4,
-                amount: 100,
-                cost: 1000
-            },
-        ],
-        fuel: 100,
-        isHappy: false,
-        favoriteResource: "",
-        uniqueResource: "",
-    };
 
-    $(".planet").click(function () {
+    $(".planet").click(function (event) {
         //get planet data here
-        var planet = planet1;
+        var id = $(this).attr('id');
+        var planet = planetData(gameLoadData,id);
+        console.log(planet)
+
         var modal;
         function drawModal(planet) {
             var div = $('#modalHolder');
@@ -63,7 +32,7 @@ $(document).ready(function () {
             dismissButton.append(dismissSpan);
             modalHeader.append(dismissButton);
             var modalBody = $('<div>').addClass("modal-body container");
-    
+
             var mainRow = $('<div>').addClass("row");
             var portraitColumn = $('<div>').addClass("col-md-3");
             mainRow.append(portraitColumn);
@@ -73,23 +42,23 @@ $(document).ready(function () {
             mainRow.append(contentColumn);
             var contentContainer = $('<div>').addClass("container");
             contentColumn.append(contentContainer);
-    
-    
+
+
             //var headerDiv = $('<div>').addClass("row");
             var table = $('<table>').attr("class", "resTable");
             var headerRow = $('<tr>');
             table.append(headerRow);
-    
-    
-    
+
+
+
             var resourceNameLabel = $('<th>').text("Resource");
             var operation = $("<th>").text("Operation");
-            var planetAmount = $("<th>").text("Amount");
+            var planetAmount = $("<th>").text("Qty");
             var cost = $("<th>").text("Cost");
-    
+
             headerRow.append(resourceNameLabel, operation, planetAmount, cost);
             contentColumn.append(table);
-    
+
             planet.resources.forEach(resource => {
                 var resRow = $('<tr>');
                 var resourceName = $('<td>');
@@ -111,22 +80,22 @@ $(document).ready(function () {
                     .attr("data-id", resource.id)
                     .attr("data-buy", "false");
                 buttonData.append(resSubButton);
-    
+
                 var resAmount = $('<td>').text(resource.amount)
                     .attr("data-amount", resource.amount)
                 resAmount.attr("id", `${resource.id}amount`);
                 var resCost = $('<td>').text(resource.cost);
                 resRow.append(resAmount, resCost);
-    
+
                 table.append(resRow);
-    
+
             });
-    
+
             modalBody.append(mainRow);
             modalContent.append(modalBody);
-    
+
             div.append(modal);
-    
+
         }
         drawModal(planet);
         modal.modal();
@@ -170,5 +139,32 @@ $(document).ready(function () {
                 $('.trade').attr("aria-disabled", "false");
                 $('.trade').removeClass("disabled");
             });
+    }
+
+    function planetData(data,id) {
+        let planet = {
+            name: data.planets[id].Planet.planetName,
+            traderName: data.planets[id].Planet.traderName,
+            resources: mapResources(data.planets[id].Resources),            
+            // fuel: data.planets[id].Resources,
+            isHappy: data.planets[id].isHappy,
+            favoriteResource: data.planets[id].Planet.planetFavorite,
+            uniqueResource: data.planets[id].Planet.planetUnique
+        };
+        return planet;
+    } 
+
+    function mapResources(resources) {
+        var array=[];
+        for (var i = 0; i < resources.length; i++) {
+            var obj = {
+                name: resources[i].resName,
+                id: resources[i].id,
+                amount: resources[i].resCount,
+                cost: resources[i].resValue
+            }
+            array.push(obj);
+        }
+        return array;
     }
 })
