@@ -1,8 +1,7 @@
 // import { finished } from "stream";
 
 // Create five planets to be displayed in the play area
-
-
+//
 // For testing the api call
 // $("#test").click(function () {
 //     var data = {
@@ -18,19 +17,19 @@
 //                     resID: 1,
 //                     resName: Food,
 //                     resCount: 5,
-
+//
 //                     resID: 2,
 //                     resName: Medicine,
 //                     resCount: 5,
-
+//
 //                     resID: 3,
 //                     resName: Entertainment,
 //                     resCount: 5,
-
+//
 //                     resID: 4,
 //                     resName: Technology,
 //                     resCount: 5,
-
+//
 //                     resID: 5,
 //                     resName: Water,
 //                     resCount: 5,
@@ -50,23 +49,20 @@
 //              id: planetTWO
 //              name: Deja-Moo,
 //              resources: [{
-//                     resID: 1,
+//    
 //                     resName: Food,
 //                     resCount: 5,
-
+//
 //                     resID: 2,
 //                     resName: Medicine,
 //                     resCount: 5,
-
-//                     resID: 3,
+//
 //                     resName: Entertainment,
 //                     resCount: 5,
-
-//                     resID: 4,
+//
 //                     resName: Technology,
 //                     resCount: 5,
-
-//                     resID: 5,
+//
 //                     resName: Water,
 //                     resCount: 5,
 //                     };, 
@@ -85,23 +81,19 @@
 //                  // **Hue-Manatee** //
 //                  name: Hue-Manatee ,
 //                  resources: [{
-//                     resID: 1,
+//
 //                     resName: Food,
 //                     resCount: 5,
-    
-//                     resID: 2,
+//    
 //                     resName: Medicine,
 //                     resCount: 5,
-    
-//                     resID: 3,
+//    
 //                     resName: Entertainment,
 //                     resCount: 5,
-    
-//                     resID: 4,
+//    
 //                     resName: Technology,
 //                     resCount: 5,
-    
-//                     resID: 5,
+//    
 //                     resName: Water,
 //                     resCount: 5,
 //                     }, 
@@ -114,29 +106,26 @@
 //                 },
 //
 // //=======================================================
-
+//
 //                      {
 //                  id: planetFOUR
 //                  // **Dumble-dope** //
 //                  name: Dumble-dope ,
 //                  resources: [{
-//                     resID: 1,
+//
 //                     resName: Food,
 //                     resCount: 5,
-        
-//                     resID: 2,
+//        
+//
 //                     resName: Medicine,
 //                     resCount: 5,
-        
-//                     resID: 3,
+//        
 //                     resName: Entertainment,
 //                     resCount: 5,
-        
-//                     resID: 4,
+//        
 //                     resName: Technology,
 //                     resCount: 5,
-        
-//                     resID: 5,
+//        
 //                     resName: Water,
 //                     resCount: 5,
 //                     }, 
@@ -149,29 +138,25 @@
 //                 },
 //
 // =======================================================
-
+//
 //                      {
 //                  id: planetFIVE
 //                  // **Ice-olated** //
 //                  name: Ice-olated ,
 //                  resources: [{
-//                     resID: 1,
+//
 //                     resName: Food,
 //                     resCount: 5,
-        
-//                     resID: 2,
+//        
 //                     resName: Medicine,
 //                     resCount: 5,
-        
-//                     resID: 3,
+//        
 //                     resName: Entertainment,
 //                     resCount: 5,
-        
-//                     resID: 4,
+//        
 //                     resName: Technology,
 //                     resCount: 5,
-        
-//                     resID: 5,
+//        
 //                     resName: Water,
 //                     resCount: 5,
 //                     }, 
@@ -179,7 +164,13 @@
 //                 happinessCount: 20,
 //                 isHappy: true
 //                 },
-
+//                 uniqueGIVE: "Space Crystals",
+//                 uniqueGET: "Space Snowcones",
+//                 },
+//                 uniqueGIVE: "Space Snowcones",
+//                 uniqueGET: "Space Crystals",
+//                 },
+//
 // ==========================================================================
 //     };
 //     saveGame(data);
