@@ -1,75 +1,189 @@
-
 var initialData = {
-    id:5,
     difficulty: "Easy",
-    isWon: true,
-    planets: [
-        {
-            id: 1,
-            resources: [{
-                 resValue:20,
-                resName:"fish",
-                resCount: 100
-            }, {
-                
-                resName:"fish",
-                resCount: 100
-            }
-            ],
-            happinessCount: 0,
-            isHappy: true
-        },
-        {
-            id: 4,
-            resources: [{
-                id:20,
-                resName:"choc",
-                resCount: 100
+    isWon: false,
+    planets: [{
+        id: 1,
+        // **Cat-a-stropohic Chaos** //
+        resources: [{
+            resName: Food,
+            resCount: 5,
+            resValue: 20
             },
             {
-                id:20,
-                resName:"choc",
-                resCount: 100
-            }
-            ],
-            happinessCount: 0,
-            isHappy: false,
-        },
-        {
-            id: 2,
-            resources: [{
-                id:20,
-                resName:"water",
-                resCount: 100
+            resName: Medicine,
+            resCount: 5,
+            resValue: 30
             },
             {
-                id:20,
-                resName:"water",
-                resCount: 100
-            }
-            ],
-            happinessCount: 0,
-            isHappy: true,
-        },
-        {
-            id: 3,
-            resources: [{
-                id:20,
-                resName:"ice",
-                resCount: 100
+            resName: Entertainment,
+            resCount: 5,
+            resValue: 20
             },
             {
-                id:20,
-                resName:"ice",
-                resCount: 100
+            resName: Technology,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Water,
+            resCount: 5,
+            resValue: 10
             }
             ],
-            happinessCount: 0,
-            isHappy: true,
-        }
-    ],
+        happinessCount: 20,
+        isHappy: true
+
+        },
+
+    // ============================================================
+
+        {
+        id: 2,
+        // **Deja-Moo** //
+        
+        resources: [{
+            resName: Food,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Medicine,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Entertainment,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Technology,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Water,
+            resCount: 5,
+            resValue: 10
+            }
+            ],
+        happinessCount: 20,
+        isHappy: true
+      
+        },
+
+// =======================================================
+
+        {
+       id: 3,
+        // **Hue-Manatee** //
+        
+        resources: [{
+            resName: Food,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Medicine,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Entertainment,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Technology,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Water,
+            resCount: 5,
+            resValue: 10
+            }
+            ],
+        happinessCount: 20,
+        isHappy: true
+        
+        },
+
+//=======================================================
+
+    {
+    id: 4,
+        // **Dumble-dope** //
+        
+        resources: [{
+            resName: Food,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Medicine,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Entertainment,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Technology,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Water,
+            resCount: 5,
+            resValue: 10
+            }
+            ],
+    happinessCount: 20,
+    isHappy: true
     
-}
+    },
+
+// =======================================================
+
+    {
+    id: 5,
+        // **Ice-olated** //
+       
+        resources: [{
+            resName: Food,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Medicine,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Entertainment,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Technology,
+            resCount: 5,
+            resValue: 10
+            },
+            {
+            resName: Water,
+            resCount: 5,
+            resValue: 10
+            }
+            ],
+    happinessCount: 20,
+    isHappy: true
+ 
+    }
+    ]};
+
 
 // Loads play area to browser
 
@@ -78,14 +192,13 @@ $(document).ready(function () {
     loadPage();
 });
 
-
 // The page is loaded with the data once it is rendered
 function loadPage(){
     $.get("/api/getByUserId").then(function(result){
         console.log("This is the data loaded");
         console.log(result);
     });
-
+};
 
 $("#logOut").click(function(event){
     alert("Clicked logout");
