@@ -2,6 +2,7 @@ $('#loginBtn').click(function (event) {
     event.preventDefault();
     var email = $('#email').val();
     var pword = $('#pword').val();
+    userName=email;
     userData = {
         email: email,
         password: pword
@@ -19,7 +20,10 @@ $('#loginBtn').click(function (event) {
 })
 
 $('#previous').click(function(event){
-    alert("Hellos");
+    alert("Hello")
+    $.get("/api/getByUserId").then(function(result){
+        console.log(result);
+    });
 });
 
 
@@ -30,7 +34,7 @@ $('#newAccountBtn').click(function (event) {
     var pword = $('#pword').val();
 
     //get the start page
-
+    
     userData = {
         email: email,
         password: pword

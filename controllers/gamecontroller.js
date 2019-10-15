@@ -32,20 +32,12 @@ router.post("/api/getInitialGame", function (req, res) {
 
 
 // Retrieves the data depending on the User ID
-router.get("/api/getByUserId/:id", function (req, res) {
-    var object = {};
-    // db.User.findOne({
-    //     where: {
-    //         id: req.params.id
-    //     }
-    // }).then(function (resDB) {
-        // db.Game.findOne
+router.get("/api/getByUserId", function (req, res) {    
         var queryData = {};
-        // var user = resDB;
         db.Game.findAll({
             limit: 1,
             where: {
-                UserId:req.params.id 
+                UserId:req.session.user.id 
             },
             order: [['id', 'DESC']],
         }).then(function (gameRes) {
