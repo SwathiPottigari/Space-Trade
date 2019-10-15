@@ -10,6 +10,7 @@
 //         isWon: false,
 //         planets: [
 //             {
+<<<<<<< HEAD
 //              id: planetONE
 //              // **Cat-a-stropohic Chaos** //
 //              name: Cat-a-stropohic Chaos ,
@@ -66,6 +67,18 @@
 //                     resName: Water,
 //                     resCount: 5,
 //                     };, 
+=======
+//                 id: 1,
+//                 resources: [{
+//                      resValue:20,
+//                     resName:"fish",
+//                     resCount: 10
+//                 }, {
+//                     id:30,
+//                     resName:"fish",
+//                     resCount: 20
+//                 }
+>>>>>>> e70ccd2d93c93b3235dbfc22f1ce1e7173ffc42c
 //                 ],
 //                 happinessCount: 20,
 //                 isHappy: true
