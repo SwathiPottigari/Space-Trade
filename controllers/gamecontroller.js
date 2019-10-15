@@ -11,6 +11,8 @@ var db = require("../models");
 // HTML FILES CALLS
 
 // Loads the index.html file on hitting the url
+
+
 router.get("/api/startPage", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
 });
@@ -143,8 +145,8 @@ function saveGameData(userId, req) {
     });
 }
 
-router.put("/api/", function (req, res) {
-
+router.put("/api/trade", function (req, res) {
+    console.log("recieved a request...");
 });
 
 router.delete("/api/", function (req, res) {

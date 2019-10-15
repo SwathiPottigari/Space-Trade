@@ -7,21 +7,25 @@ let planet1 = {
     resources: [
         {
             name: "space kitty litter",
+            id: 1,
             amount: 10,
             cost: 100
         },
         {
             name: "space yarn",
+            id: 2,
             amount: 40,
             cost: 25
         },
         {
             name: "space catnip",
+            id: 3,
             amount: 20,
             cost: 50
         },
         {
             name: "space fish",
+            id: 4,
             amount: 100,
             cost: 1000
         },
@@ -53,21 +57,59 @@ dismissSpan.attr("aria-hidden","true");
 dismissSpan.text("Close")
 dismissButton.append(dismissSpan);
 modalHeader.append(dismissButton);
-var modalBody = $('<div>').addClass("modal-body");
+var modalBody = $('<div>').addClass("modal-body container");
+
+var mainRow = $('<div>').addClass("row");
+var portraitColumn = $('<div>').addClass("col-md-3");
+mainRow.append(portraitColumn);
+var portrait = $('<img>');
+portraitColumn.append(portrait);
+var contentColumn = $('<div>').addClass("col-md-6");
+mainRow.append(contentColumn);
+var contentContainer = $('<div>').addClass("container");
+contentColumn.append(contentContainer);
+
+var headerDiv = $('<div>').addClass("row");
+var resourceNameLabel = $('<h4>').text("Resource");
+var operation = $("<h4>").text("Operation");
+var planetAmount = $("<h4>").text("Amount");
+var cost = $("<h4>").text("Cost");
+
+headerDiv.append(resourceNameLabel, operation, planetAmount, cost);
+contentColumn.append(headerDiv);
 
 planet1.resources.forEach(resource => {
-    console.log("Here...")
-    var label = $('<p>');
-    label.text(resource.name);
-    modalBody.append(label);
+    var resDiv = $('<div>').addClass("row");
+
+    var resourceName = $('<p>');
+    resourceName.text(resource.name);
+    resDiv.append(resourceName);
     var resAddButton = $("<button>");
     resAddButton.text("BUY");
-    modalBody.append(resAddButton);
+    resAddButton.attr("class", "trade")
+        .attr("data-cost", resource.cost)
+        .attr("data-id",resource.id)
+        .attr("data-buy", "true");
+    resDiv.append(resAddButton);
     var resSubButton = $("<button>");
     resSubButton.text("SELL");
-    modalBody.append(resSubButton);
+    resSubButton.attr("class", "trade")
+    .attr("data-cost", resource.cost)
+    .attr("data-id",resource.id)
+    .attr("data-buy", "false");
+    resDiv.append(resSubButton);
+
+    var resAmount = $('<p>').text(resource.amount)
+        .attr("data-amount", resource.amount)
+    resAmount.attr("id",`${resource.id}amount`);
+    var resCost= $('<p>').text(resource.cost);
+    resDiv.append(resAmount, resCost);
+
+    contentColumn.append(resDiv);
+    
 });
 
+modalBody.append(mainRow);
 modalContent.append(modalBody);
 
 div.append(modal);
@@ -76,3 +118,41 @@ $("#modalDisplay").click(function(){
     modal.modal();
 });
 
+$('.trade').click(function(event){
+    var currentId = $(this).attr("data-id");
+    var currentAmount = $(`#${currentId}amount`).attr("data-amount");
+    
+    //TODO: Need to add the trader's cargo hold, too.
+
+    if($(this).attr("data-buy")==="true"){
+        currentAmount--;
+    }else{
+        currentAmount++;
+    }
+    
+    var amountSpan = $(`#${currentId}amount`);
+    $(`#${currentId}amount`).attr("data-amount",currentAmount);
+    amountSpan.text(currentAmount);
+
+    var trade = {
+
+    }
+
+    updateTradeValue(trade)
+});
+
+
+function updateTradeValue(trade){
+    $('.trade').attr("aria-disabled","true");
+    $('.trade').addClass("disabled");
+
+    $.ajax({
+        method: "PUT",
+        url: "/api/trade",
+        data: trade
+      })
+        .then(function() {
+          $('.trade').attr("aria-disabled","false");
+          $('.trade').removeClass("disabled");
+        });
+}

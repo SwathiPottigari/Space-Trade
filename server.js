@@ -8,7 +8,7 @@ require('dotenv').config();
 
 var PORT = process.env.PORT || 3000;
 
-var db=require("./models");
+var db = require("./models");
 // console.log(db);
 //setup app to parse post data
 app.use(express.urlencoded({ extended: true }));
