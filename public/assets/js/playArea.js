@@ -34,12 +34,16 @@
 //                     resID: 5,
 //                     resName: Water,
 //                     resCount: 5,
-//                     }, 
-//                 ],
+//                     },
 //                 happinessCount: 20,
-//                 isHappy: true
+//                 isHappy: true,
 //                 },
-
+//                 uniqueGIVE: "Space Catnip",
+//                 uniqueGET: "Space Fertilizer",
+//                 },
+//                 
+//  // ============================================================
+//
 //                 {
 //                 id: planetTWO,
 //                 // **Deja-Moo** //
@@ -65,11 +69,16 @@
 //                     resID: 5,
 //                     resName: Water,
 //                     resCount: 5,
-//                     }, 
+//                     };, 
 //                 ],
 //                 happinessCount: 20,
 //                 isHappy: true
 //                 },
+//                 uniqueGIVE: "Space Fertilizer",
+//                 uniqueGET: "Space Technology",
+//                 },
+//
+// =======================================================
 //
 //                      {
 //                  id: planetTHREE
@@ -100,6 +109,11 @@
 //                 happinessCount: 20,
 //                 isHappy: true
 //                 },
+//                 uniqueGIVE: "Space Technology",
+//                 uniqueGET: "Space Catnip",
+//                 },
+//
+// //=======================================================
 
 //                      {
 //                  id: planetFOUR
@@ -130,6 +144,11 @@
 //                 happinessCount: 20,
 //                 isHappy: true
 //                 },
+//                 uniqueGIVE: "Space Crystals",
+//                 uniqueGET: "Space Snowcones",
+//                 },
+//
+// =======================================================
 
 //                      {
 //                  id: planetFIVE
@@ -160,10 +179,6 @@
 //                 happinessCount: 20,
 //                 isHappy: true
 //                 },
-
-
-    
-
 
 // ==========================================================================
 //     };
