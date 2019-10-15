@@ -44,7 +44,12 @@ button {
     color: palegoldenrod;
 }
 
-#win-con {
+#win-title {
     font-family: 'Press Start 2P', cursive;
     color: lightblue;
+}
+
+#win-con {
+    font-family: 'Press Start 2P', cursive;
+    color: greenyellow;
 }

@@ -1,5 +1,7 @@
-// Loads play area to browser
+// Global variables
+var gameLoadData = {};
 
+// Loads play area to browser
 $(document).ready(function () {
     console.log("play area loaded");
     loadPage();
@@ -9,8 +11,25 @@ $(document).ready(function () {
 function loadPage(){
     $.get("/api/getByUserId").then(function(result){
         console.log("This is the data loaded");
-        console.log(result);
+        gameLoadData = result;
+        mapData(gameLoadData);
+        console.log(gameLoadData);
     });
+};
+
+function calculateHappiness(data) {
+  for (var i = 0; i < 0; i++) {
+    if (data[i].isHappy===false) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function mapData(data) {
+  
+  var happiness = calculateHappiness(data.planets);
+  $("#win-con").text(happiness)
 };
 
 $("#logOut").click(function(event){
