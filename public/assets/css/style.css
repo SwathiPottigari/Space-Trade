@@ -2,3 +2,15 @@ canvas {
     border: 1px solid #d3d3d3;
     background: url("../images/playAreaBG.gif");
 }
+
+p {
+    margin: 1px;
+}
+
+button {
+    margin: 5px;
+}
+
+h4 {
+    margin: 5px;
+}

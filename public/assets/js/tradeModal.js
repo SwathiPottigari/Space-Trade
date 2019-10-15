@@ -64,10 +64,19 @@ var portraitColumn = $('<div>').addClass("col-md-3");
 mainRow.append(portraitColumn);
 var portrait = $('<img>');
 portraitColumn.append(portrait);
-var contentColumn = $('<div>').addClass("col-md-3");
+var contentColumn = $('<div>').addClass("col-md-6");
 mainRow.append(contentColumn);
 var contentContainer = $('<div>').addClass("container");
 contentColumn.append(contentContainer);
+
+var headerDiv = $('<div>').addClass("row");
+var resourceNameLabel = $('<h4>').text("Resource");
+var operation = $("<h4>").text("Operation");
+var planetAmount = $("<h4>").text("Amount");
+var cost = $("<h4>").text("Cost");
+
+headerDiv.append(resourceNameLabel, operation, planetAmount, cost);
+contentColumn.append(headerDiv);
 
 planet1.resources.forEach(resource => {
     var resDiv = $('<div>').addClass("row");
@@ -77,24 +86,27 @@ planet1.resources.forEach(resource => {
     resDiv.append(resourceName);
     var resAddButton = $("<button>");
     resAddButton.text("BUY");
-    resAddButton.attr("class", "buyButton")
-        .attr("data-amount", resource.amount)
+    resAddButton.attr("class", "trade")
         .attr("data-cost", resource.cost)
-        .attr("data-id",resource.id);
+        .attr("data-id",resource.id)
+        .attr("data-buy", "true");
     resDiv.append(resAddButton);
     var resSubButton = $("<button>");
     resSubButton.text("SELL");
+    resSubButton.attr("class", "trade")
+    .attr("data-cost", resource.cost)
+    .attr("data-id",resource.id)
+    .attr("data-buy", "false");
     resDiv.append(resSubButton);
 
-    var resAmount = $('<p>').text(resource.amount).val(resource.amount);
+    var resAmount = $('<p>').text(resource.amount)
+        .attr("data-amount", resource.amount)
     resAmount.attr("id",`${resource.id}amount`);
     var resCost= $('<p>').text(resource.cost);
     resDiv.append(resAmount, resCost);
 
     contentColumn.append(resDiv);
     
-
-
 });
 
 modalBody.append(mainRow);
@@ -106,14 +118,18 @@ $("#modalDisplay").click(function(){
     modal.modal();
 });
 
-$('.buyButton').click(function(event){
-    console.log($(this).attr("data-amount"))
-    var currentAmount = $(this).attr("data-amount");
+$('.trade').click(function(event){
     var currentId = $(this).attr("data-id");
-    currentAmount--;
+    var currentAmount = $(`#${currentId}amount`).attr("data-amount");
+    
 
+    if($(this).attr("data-buy")==="true"){
+        currentAmount--;
+    }else{
+        currentAmount++;
+    }
+    
     var amountSpan = $(`#${currentId}amount`);
-    $(this).attr("data-amount",currentAmount);
+    $(`#${currentId}amount`).attr("data-amount",currentAmount);
     amountSpan.text(currentAmount);
 });
-
