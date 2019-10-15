@@ -14,10 +14,10 @@ function loadPage(){
 };
 
 $("#logOut").click(function(event){
-    alert("Clicked logout");
     $.ajax({
                 method: "PUT",
                 url: "/api/updateGame",
+                // Have to map the original data into it
                 data: initialData
               })
                 .then(function(result) {
