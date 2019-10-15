@@ -1,104 +1,4 @@
 
-// import { finished } from "stream";
-
-// Create five planets to be displayed in the play area
-
-
-// For testing the api call
-// $("#test").click(function () {
-//     var data = {
-//         name: "Test33",
-//         difficulty: "Easy",
-//         isWon: false,
-//         planets: [
-//             {
-//                 id: 1,
-//                 resources: [{
-//                      resValue:20,
-//                     resName:"fish",
-//                     resCount: 10
-//                 }, {
-//                     id:30,
-//                     resName:"fish",
-//                     resCount: 20
-//                 }
-//                 ],
-//                 happinessCount: 20,
-//                 isHappy: true
-//             },
-//             {
-//                 id: 4,
-//                 resources: [{
-//                     id:20,
-//                     resName:"choc",
-//                     resCount: 30
-//                 },
-//                 {
-//                     id:20,
-//                     resName:"choc",
-//                     resCount: 40
-//                 }
-//                 ],
-//                 happinessCount: 30,
-//                 isHappy: false,
-//             },
-//             {
-//                 id: 2,
-//                 resources: [{
-//                     id:20,
-//                     resName:"water",
-//                     resCount: 50
-//                 },
-//                 {
-//                     id:20,
-//                     resName:"water",
-//                     resCount: 60
-//                 }
-//                 ],
-//                 happinessCount: 30,
-//                 isHappy: true,
-//             },
-//             {
-//                 id: 3,
-//                 resources: [{
-//                     id:20,
-//                     resName:"ice",
-//                     resCount: 70
-//                 },
-//                 {
-//                     id:20,
-//                     resName:"ice",
-//                     resCount: 80
-//                 }
-//                 ],
-//                 happinessCount: 80,
-//                 isHappy: true,
-//             }
-//         ],
-        
-//     };
-//     saveGame(data);
-
-    // To test to get  the data by Id
-//    var data="Test";
-//     getById(data);
-// });
-
-// function saveGame(authorData) {
-//     $.post("/api/getInitialGame", authorData)
-//         .then(function (result) {
-//             alert(result);
-//             getById(result);
-//         });
-// }
-// function getById(authorData) {
-//     $.get("/api/getByUserId/"+authorData)
-//         .then(function (result) {
-//             console.log(result);
-//             alert(result);
-//         });
-// }
-
 // Loads play area to browser
 
 $(document).ready(function () {
@@ -109,7 +9,16 @@ $(document).ready(function () {
     drawPlanet3();
     drawPlanet4();
     drawPlanet5();
+    loadPage();
 });
+
+// The page is loaded with the data once it is rendered
+function loadPage(){
+    $.get("/api/getByUserId").then(function(result){
+        console.log("This is the data loaded");
+        console.log(result);
+    });
+};
 
 // Create space ship game piece
 

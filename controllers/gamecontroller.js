@@ -27,9 +27,8 @@ router.get("/api/selectDifficulty", function (req, res) {
 // API CALLS
 
 // Retrieves the data required by initial game
-router.post("/api/getInitialGame", function (req, res) {
-    createGame(req,res);
-
+router.post("/api/createInitialGame", function (req, res) {
+    saveGameData(req,res);
 });
 
 
@@ -77,42 +76,33 @@ router.get("/api/getByUserId", function (req, res) {
 
 // To save the game into DB 
 router.post("/api/savegame", function (req, res) {
-    createGame(req,res);
+    saveGameData(req,res);
 });
 
-function createGame(req,res){
-    db.User.findOne({
-        where: {
-            name: req.body.name
-        }
-    }).then(function (resDB) {
-        var id;
-        // console.log(resDB);
-        if (resDB === null) {
-            db.User.create({
-                name: req.body.name
-            }).then(function (dbResult) {
-                var user = dbResult;
-                id = user.dataValues.id;
-                saveGameData(id, req);
-                res.json(id);
-            }).catch(function (err) { throw err });
-        }
-        else {
-            var user = resDB;
-            id = user.dataValues.id;
-            saveGameData(id,req,res);
-            res.json(id);
-        }        
-    });
-};
+// function createGame(req,res){
+//         var id;
+        
+          
+//                 var user = dbResult;
+//                 id = user.dataValues.id;
+//                 saveGameData(id, req);
+//                 res.json(id);
+            
+        
+//             var user = resDB;
+//             id = user.dataValues.id;
+//             saveGameData(id,req,res);
+//             res.json(id);
+             
+    
+// };
 
 // Saves the game data
-function saveGameData(userId, req) {
+function saveGameData(req,res) {
     db.Game.create({
         difficulty: req.body.difficulty,
         isWon: req.body.isWon,
-        UserId: userId
+        UserId: req.session.user.id
     }).then(function (dbGame) {
         var game = dbGame;
         console.log(game);
