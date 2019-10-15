@@ -142,8 +142,6 @@ $(document).ready(function () {
     }
 
     function planetData(data,id) {
-        console.log("this is id")
-        console.log(id)
         let planet = {
             name: data.planets[id].Planet.planetName,
             traderName: data.planets[id].Planet.traderName,

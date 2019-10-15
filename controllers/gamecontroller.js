@@ -65,7 +65,7 @@ router.get("/api/getByUserId", function (req, res) {
                 },
                 order: [['id', 'DESC']],
                 include: [db.GameStateResources,db.Planet],
-                limit: 5
+                limit: 6
 
             }).then(function (gameRes) {
                 var planets = [];
