@@ -70,17 +70,17 @@ var initialData = {
     
 }
 
-$("#test").click(function(event){
-    $.ajax({
-        method: "PUT",
-        url: "/api/updateGame",
-        data: initialData
-      })
-        .then(function(result) {
-          console.log(result);
-        });
+// $("#test").click(function(event){
+//     $.ajax({
+//         method: "PUT",
+//         url: "/api/updateGame",
+//         data: initialData
+//       })
+//         .then(function(result) {
+//           console.log(result);
+//         });
    
-});
+// });
 
 $('#loginBtn').click(function (event) {
     event.preventDefault();
