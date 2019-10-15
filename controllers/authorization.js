@@ -36,7 +36,8 @@ router.post('/signup',function(req,res){
                 name:req.body.email,
                 password:req.body.password
             }).then(function(newUser){
-                res.json(newUser);
+                req.session.user = newUser;
+                res.json(req.session.user);
             }).catch(error=>{throw error});
         }
         else{
