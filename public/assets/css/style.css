@@ -19,26 +19,32 @@ button {
 
 .container {
     background: rgba(255, 255, 255, 0.3);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.map {
-    text-align: center;
-}
-
-.user-hud p{
+#user-name {
+    font-family: 'Press Start 2P', cursive;
     color: goldenrod;
 }
 
-.money-hud p{
-    font-size: 14px;
-    color: palegoldenrod;
-}
-
-.cargo-hud p{
+.cargo {
+    font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     color: palegoldenrod;
 }
 
-#user-img {
-    margin-bottom: 5px;
+#money,
+#fuel,
+#cargo-hold {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    color: palegoldenrod;
+}
+
+#win-con {
+    font-family: 'Press Start 2P', cursive;
+    color: lightblue;
 }

@@ -22,96 +22,114 @@
 <body>
 
     <div class="container">
+        
         <div class="row">
-            <div class="col-md-3 user-hud">
-                <p>User Name</p><img id="user-img" class="img-fluid" src="../public/assets/images/space-cat1.png" alt="">
+            <!-- HUD -->
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col">
+                        <span id="user-name">User Name</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img id="user-img" class="img-fluid" src="../public/assets/images/space-cat1.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span id="money">Star Bucks:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span id="fuel">Fuel:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span id=cargo-hold>Cargo Hold</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button>SAVE & QUIT</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 map">
-                <p>Planet Name</p><img class="img-fluid" src="../public/assets/images/planet1.jpg" alt="">
-            </div>
-            <div class="col-md-3 map">
-                <p>Planetary Happiness</p>
-            </div>
-            <div class="col-md-3 map">
-                <p>Planet Name</p><img class="img-fluid" src="../public/assets/images/planet2.jpg" alt="">
-            </div>
-        </div>
+            <!-- END HUD -->
 
-        <div class="row">
-            <div class="col-md-3 money-hud">
+            <!-- MAP -->
+            <div class="col-md-9">
                 <div class="row">
-                    <div class="col">
-                        <p>Money:</p>
+                    <div class="col-md-4">
+                        <span id="win-con">Planetary<br>Happiness:</span>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Planet Name</p>
+                        <img class="img-fluid planet" src="../public/assets/images/planet1.jpg" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <p>Planet Name</p>
+                        <img class="img-fluid planet" src="../public/assets/images/planet2.jpg" alt="">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <p>Fuel:</p>
+                    <div class="col-md-4">
+                        <p>Planet Name</p>
+                        <img class="img-fluid planet" src="../public/assets/images/planet3.jpg" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3 cargo-hud">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>Food: 100</p>
+                    <div class="col-md-4">
+                        <p>Planet Name</p>
+                        <img class="img-fluid planet" src="../public/assets/images/planet4.jpg" alt="">
                     </div>
-                    <div class="col-md-6">
-                        <p>Water: 100</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>r3</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>r4</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>r5</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>r6</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>r7</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>r8</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>r9</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>r0</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button>END MISSION</button>
+                    <div class="col-md-4">
+                        <p>Planet Name</p>
+                        <img class="img-fluid planet" src="../public/assets/images/planet5.jpg" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 map">
-                <p>Planet Name</p><img class="img-fluid" src="../public/assets/images/planet3.jpg" alt="">
-            </div>
-            <div class="col-md-3 map">
-                <p>Planet Name</p><img class="img-fluid" src="../public/assets/images/planet4.jpg" alt="">
-            </div>
-            <div class="col-md-3 map">
-                <p>Planet Name</p><img class="img-fluid" src="../public/assets/images/planet5.jpg" alt="">
-            </div>
+            <!-- END MAP -->
         </div>
     </div>
 
@@ -120,7 +138,7 @@
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script> -->
-        <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
