@@ -71,7 +71,7 @@ $("#test").click(function () {
             id: planetTWO,
             // **Deja-Moo** //
             id: planetTWO
-            name: "Deja - Moo",
+            name: "Deja-Moo",
             resources: [{
                 resName: Food,
                 resCount: 5,
@@ -109,7 +109,7 @@ $("#test").click(function () {
             {
            id: planetTHREE
             // **Hue-Manatee** //
-            name: "Hue - Manatee",
+            name: "Hue-Manatee",
             resources: [{
                 resName: Food,
                 resCount: 5,
@@ -147,7 +147,7 @@ $("#test").click(function () {
         {
         id: planetFOUR
             // **Dumble-dope** //
-            name: "Dumble - dope",
+            name: "Dumble-dope",
             resources: [{
                 resName: Food,
                 resCount: 5,
@@ -182,38 +182,41 @@ $("#test").click(function () {
 
     // =======================================================
 
-    {
+        {
         id: planetFIVE
             // **Ice-olated** //
-            name: "Ice - olated",
+            name: "Ice-olated",
             resources: [{
-
-            resName: Food,
-            resCount: 5,
-            resValue: 10,
-
-            resName: Medicine,
-            resCount: 5,
-            resValue: 10,
-
-            resName: Entertainment,
-            resCount: 5,
-            resValue: 10,
-
-            resName: Technology,
-            resCount: 5,
-            resValue: 10,
-
-            resName: Water,
-            resCount: 5,
-            resValue: 10,
-        },],
+                resName: Food,
+                resCount: 5,
+                resValue: 10,
+                },
+                {
+                resName: Medicine,
+                resCount: 5,
+                resValue: 10,
+                },
+                {
+                resName: Entertainment,
+                resCount: 5,
+                resValue: 10,
+                },
+                {
+                resName: Technology,
+                resCount: 5,
+                resValue: 10,
+                },
+                {
+                resName: Water,
+                resCount: 5,
+                resValue: 10,
+                },
+                ],
         happinessCount: 20,
-        isHappy: true
-    },
-    uniqueGIVE: "Space Snowcones",
-    uniqueGET: "Space Crystals",
-    },
+        isHappy: true,
+        uniqueGIVE: "Space Snowcones",
+        uniqueGET: "Space Crystals",
+        },
 
     // ==========================================================================
 
