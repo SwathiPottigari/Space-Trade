@@ -12,7 +12,7 @@ var db = require("../models");
 
 // Loads the index.html file on hitting the url
 router.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../views/login.html"));
 });
 
 
