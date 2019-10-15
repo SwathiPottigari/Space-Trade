@@ -106,7 +106,7 @@ $("#test").click(function () {
 
     // =======================================================
 
-    {
+            {
            id: planetTHREE
             // **Hue-Manatee** //
             name: "Hue - Manatee",
@@ -144,39 +144,41 @@ $("#test").click(function () {
 
     //=======================================================
 
-    {
+        {
         id: planetFOUR
             // **Dumble-dope** //
             name: "Dumble - dope",
             resources: [{
-
-            resName: Food,
-            resCount: 5,
-            resValue: 10,
-
-
-            resName: Medicine,
-            resCount: 5,
-            resValue: 10,
-
-            resName: Entertainment,
-            resCount: 5,
-            resValue: 10,
-
-            resName: Technology,
-            resCount: 5,
-            resValue: 10,
-
-            resName: Water,
-            resCount: 5,
-            resValue: 10,
-        },],
-        happinessCount: 20,
-        isHappy: true
-    },
-    uniqueGIVE: "Space Crystals",
-    uniqueGET: "Space Snowcones",
+                resName: Food,
+                resCount: 5,
+                resValue: 10,
                 },
+                {
+                resName: Medicine,
+                resCount: 5,
+                resValue: 10,
+                },
+                {
+                resName: Entertainment,
+                resCount: 5,
+                resValue: 10,
+                },
+                {
+                resName: Technology,
+                resCount: 5,
+                resValue: 10,
+                },
+                {
+                resName: Water,
+                resCount: 5,
+                resValue: 10,
+                },
+                ],
+        happinessCount: 20,
+        isHappy: true,
+        uniqueGIVE: "Space Crystals",
+        uniqueGET: "Space Snowcones",
+        },
 
     // =======================================================
 
