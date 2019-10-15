@@ -122,6 +122,7 @@ $('.trade').click(function(event){
     var currentId = $(this).attr("data-id");
     var currentAmount = $(`#${currentId}amount`).attr("data-amount");
     
+    //TODO: Need to add the trader's cargo hold, too.
 
     if($(this).attr("data-buy")==="true"){
         currentAmount--;
@@ -132,4 +133,26 @@ $('.trade').click(function(event){
     var amountSpan = $(`#${currentId}amount`);
     $(`#${currentId}amount`).attr("data-amount",currentAmount);
     amountSpan.text(currentAmount);
+
+    var trade = {
+
+    }
+
+    updateTradeValue(trade)
 });
+
+
+function updateTradeValue(trade){
+    $('.trade').attr("aria-disabled","true");
+    $('.trade').addClass("disabled");
+
+    $.ajax({
+        method: "PUT",
+        url: "/api/trade",
+        data: trade
+      })
+        .then(function() {
+          $('.trade').attr("aria-disabled","false");
+          $('.trade').removeClass("disabled");
+        });
+}
