@@ -1,20 +1,21 @@
 var initialData = {
-    difficulty: "Hard",
-    isWon: false,
+    id:5,
+    difficulty: "Easy",
+    isWon: true,
     planets: [
         {
             id: 1,
             resources: [{
                  resValue:20,
                 resName:"fish",
-                resCount: 10
+                resCount: 100
             }, {
-                id:30,
+                
                 resName:"fish",
-                resCount: 20
+                resCount: 100
             }
             ],
-            happinessCount: 20,
+            happinessCount: 0,
             isHappy: true
         },
         {
@@ -22,15 +23,15 @@ var initialData = {
             resources: [{
                 id:20,
                 resName:"choc",
-                resCount: 30
+                resCount: 100
             },
             {
                 id:20,
                 resName:"choc",
-                resCount: 40
+                resCount: 100
             }
             ],
-            happinessCount: 30,
+            happinessCount: 0,
             isHappy: false,
         },
         {
@@ -38,15 +39,15 @@ var initialData = {
             resources: [{
                 id:20,
                 resName:"water",
-                resCount: 50
+                resCount: 100
             },
             {
                 id:20,
                 resName:"water",
-                resCount: 60
+                resCount: 100
             }
             ],
-            happinessCount: 30,
+            happinessCount: 0,
             isHappy: true,
         },
         {
@@ -54,20 +55,32 @@ var initialData = {
             resources: [{
                 id:20,
                 resName:"ice",
-                resCount: 70
+                resCount: 100
             },
             {
                 id:20,
                 resName:"ice",
-                resCount: 80
+                resCount: 100
             }
             ],
-            happinessCount: 80,
+            happinessCount: 0,
             isHappy: true,
         }
     ],
     
 }
+
+$("#test").click(function(event){
+    $.ajax({
+        method: "PUT",
+        url: "/api/updateGame",
+        data: initialData
+      })
+        .then(function(result) {
+          console.log(result);
+        });
+   
+});
 
 $('#loginBtn').click(function (event) {
     event.preventDefault();
