@@ -15,26 +15,24 @@
 //              // **Cat-a-stropohic Chaos** //
 //              name: Cat-a-stropohic Chaos ,
 //              resources: [{
-//                     resID: 1,
+//                     
 //                     resName: Food,
 //                     resCount: 5,
-//
-//                     resID: 2,
+                        resValue:
+//                     }
 //                     resName: Medicine,
 //                     resCount: 5,
-//
-//                     resID: 3,
+//                      
 //                     resName: Entertainment,
 //                     resCount: 5,
 //
-//                     resID: 4,
 //                     resName: Technology,
 //                     resCount: 5,
 //
-//                     resID: 5,
 //                     resName: Water,
 //                     resCount: 5,
 //                     },
+//                     ],
 //                 happinessCount: 20,
 //                 isHappy: true,
 //                 },
