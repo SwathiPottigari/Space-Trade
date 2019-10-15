@@ -123,7 +123,7 @@ $(document).ready(function () {
 
     div.append(modal);
 
-    $("#modalTest").click(function () {
+    $(".planet").click(function () {
         modal.modal();
     });
 
