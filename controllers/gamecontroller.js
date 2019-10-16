@@ -117,8 +117,8 @@ function saveGameData(req, res) {
             { returning: ['id'] }
         ).then(function (dbGameStats) {
             var resArray = [];
-            var stats=dbGameStats;
-                for(var k=0;k < req.body.planets.length;k++){
+            var stats = dbGameStats;
+            for (var k = 0; k < req.body.planets.length; k++) {
                 for (var j = 0; j < req.body.planets[k].resources.length; j++) {
                     var resObj = {
                         resName: req.body.planets[k].resources[j].resName,
@@ -129,10 +129,10 @@ function saveGameData(req, res) {
                     resArray.push(resObj);
                 }
             }
-            
+
             db.GameStateResources.bulkCreate(resArray,
-                { returning: true}
-                ).then(function (result) {
+                { returning: true }
+            ).then(function (result) {
             });
         })
 
@@ -145,9 +145,9 @@ router.put("/api/trade", function (req, res) {
     db.GamesState.findOne({
         where: {
             GameId: req.body.id,
-            PlanetId:req.body.planetId
+            PlanetId: req.body.planetId
         }
-    }).then(function(result){
+    }).then(function (result) {
         console.log("Entered");
         console.log(result.dataValues.id)
         db.GameStateResources.update({
@@ -161,10 +161,9 @@ router.put("/api/trade", function (req, res) {
                 }
             }
         ).then(function (dbPost) {
-            // console.log("hello");
-            console.log(dbPost);
+            res.end();
         });
-    })    
+    })
 });
 
 router.put("/api/updateGame", function (req, res) {
@@ -177,56 +176,10 @@ router.put("/api/updateGame", function (req, res) {
             where: {
                 id: req.body.id
             }
-        })
-        .then(function (dbGame) {
-            var k = 0;
-            var gameStateIds = [];
-            db.GamesState.findAll({
-                where: {
-                    GameId: req.body.id,
-                }
-            }).then(function (dbGameStateID) {
-                for (var i = 0; i < dbGameStateID.length; i++) {
-                    gameStateIds.push(dbGameStateID[i].dataValues.id);
-                }
-                for (var i = 0; i < req.body.planets.length; i++) {
-                    db.GamesState.update({
-                        happinessCount: req.body.planets[i].happinessCount,
-                        isHappy: req.body.planets[i].isHappy,
-                        updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss")
-                    },
-                        {
-                            where: {
-                                GameId: req.body.id,
-                                PlanetId: req.body.planets[i].id
-                            }
-                        }).then(function (dbGameStats) {
-                            var stats = dbGameStats;
-                            // console.log(stats);
-                            // console.log("enterd the loop---" + k);
-                            for (var j = 0; j < req.body.planets[k].resources.length; j++) {
-                                db.GameStateResources.update({
-                                    resCount: req.body.planets[k].resources[j].resCount,
-                                    updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss")
-                                },
-                                    {
-                                        where: {
-                                            GamesStateId: gameStateIds[k],
-                                            resName: req.body.planets[k].resources[j].resName
-                                        }
-                                    }
-                                ).then(function (dbPost) {
-                                    // console.log("hello");
-                                });
-                            }
-                            k++;
-                        })
-
-                }
-            });
-
-            res.json(req.session.user.id);
+        }).then(function (dbResult) {
+            res.json(dbResult);
         });
+
 });
 
 router.delete("/api/", function (req, res) {

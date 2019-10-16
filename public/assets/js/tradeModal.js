@@ -192,11 +192,27 @@ $(document).ready(function () {
         var tradeDetails = {
             id: gameLoadData.game.id,
             resourceId: resId,
-            planetId: planetId,
+            planetId: correctPlanet(planetId),
             resName: gameLoadData.planets[planetId].Resources[resId - 1].resName,
             resCount: gameLoadData.planets[planetId].Resources[resId - 1].resCount
         }
-
+        function correctPlanet(planetId) {
+            if (planetId === 5) {
+                return 1;
+            }
+            else if (planetId === 4) {
+                return 2;
+            }
+            else if (planetId === 3) {
+                return 1;
+            }
+            else if (planetId === 2) {
+                return 1;
+            }
+            else if (planetId === 1) {
+                return 5;
+            }
+        }
         updateTradeValue(tradeDetails)
     });
 
@@ -204,14 +220,12 @@ $(document).ready(function () {
 
 
     function updateTradeValue(trade) {
-        console.log("Dta for trade");
-        console.log(trade);
         $.ajax({
             method: "PUT",
             url: "/api/trade",
             data: trade
         }).then(function (result) {
-            alert(result);
+            console.log("end trade");
         });
     }
 
