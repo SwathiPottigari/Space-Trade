@@ -16,7 +16,7 @@ function loadPage(){
 };
 
 function calculateHappiness(data) {
-  for (var i = 0; i < 0; i++) {
+  for (var i = 5; i >0; i--) {
     if (data[i].isHappy===false) {
       return false;
     }
@@ -28,8 +28,8 @@ function mapData(data) {
   
   var happiness = calculateHappiness(data.planets);
   $("#win-con").text(happiness);
-  for(var i=0;i<data.planets[5].Resources.length;i++){
-    $("#res-"+i).text(data.planets[5].Resources[i].resName);
+  for(var i=0;i<data.planets[0].Resources.length;i++){
+    $("#res-"+i).text(data.planets[0].Resources[i].resName);
   }
 };
 

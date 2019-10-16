@@ -108,6 +108,7 @@ $(document).ready(function () {
     $(document).on('click', '.trade', function (event) {
         console.log("HERE")
         var currentId = $(this).attr("data-id");
+        console.log(currentId);
         var currentAmount = $(`#${currentId}amount`).attr("data-amount");
 
         //TODO: Need to add the trader's cargo hold, too.
@@ -148,9 +149,9 @@ $(document).ready(function () {
     function planetData(data,id) {
         let planet = {
             name: data.planets[id].Planet.planetName,
-            traderName: data.planets[id].Planet.traderName,
+            traderName: data.planets[id].Planet.planetTrader,
             resources: mapResources(data.planets[id].Resources),            
-            fuel: data.planets[id].Planet.fuel,
+            // fuel: data.planets[id].Planet.fuel,
             isHappy: data.planets[id].isHappy,
             favoriteResource: data.planets[id].Planet.planetFavorite,
             uniqueResource: data.planets[id].Planet.planetUnique
