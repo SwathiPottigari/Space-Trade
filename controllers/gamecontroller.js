@@ -141,7 +141,6 @@ function saveGameData(req, res) {
 }
 
 router.put("/api/trade", function (req, res) {
-    console.log(req);
     db.GamesState.findOne({
         where: {
             GameId: req.body.id,
@@ -175,6 +174,24 @@ router.put("/api/updateGame", function (req, res) {
         {
             where: {
                 id: req.body.id
+            }
+        }).then(function (dbResult) {
+            res.json(dbResult);
+        });
+
+});
+
+router.put("/api/updateGameStats", function (req, res) {
+    db.GamesState.update({
+        happinessCount: req.body.happinessCount,
+        isHappy: req.body.isHappy,
+        updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss")
+
+    },
+        {
+            where: {
+                GameId: req.body.id,
+                PlanetId: req.body.planetId
             }
         }).then(function (dbResult) {
             res.json(dbResult);
