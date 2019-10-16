@@ -163,6 +163,7 @@ $(document).ready(function () {
                     if(happyPlanets === 3){
                         //win
                         console.log("YOU ARE WINNER")
+                        $('#win-con').text("TRUE");
                     }
                 }
                 gameLoadData.planets[planetId].happinessCount = currentHappiness;
