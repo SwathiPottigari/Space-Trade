@@ -1,4 +1,5 @@
 var planetId ;
+var happyPlanets = 0;
 $(document).ready(function () {
     //get data
     //create modal with data
@@ -11,6 +12,7 @@ $(document).ready(function () {
     $(".planet").click(function (event) {
         //get planet data here
         planetId = $(this).attr('id');
+        console.log("PlanetID " + planetId)
         var planet = planetData(gameLoadData,planetId);
         gameLoadData.planets[0].Resources[5].resCount--;
         $(".Progress-main").attr("value",gameLoadData.planets[0].Resources[5].resCount--);
@@ -75,6 +77,7 @@ $(document).ready(function () {
                 resAddButton.text("BUY");
                 resAddButton.attr("class", "trade")
                     .attr("data-cost", resource.cost)
+                    .attr("data-planet", planetId)
                     .attr("data-id", resource.id)
                     .attr("data-name",resource.name)
                     .attr("data-buy", "true");
@@ -84,6 +87,7 @@ $(document).ready(function () {
                 resSubButton.text("SELL");
                 resSubButton.attr("class", "trade")
                     .attr("data-cost", resource.cost)
+                    .attr("data-planet", planetId)
                     .attr("data-id", resource.id)
                     .attr("data-name",resource.name)
                     .attr("data-buy", "false");
@@ -114,11 +118,14 @@ $(document).ready(function () {
     
         var currentId = $(this).attr("data-id");
         var resName = $(this).attr("data-name");
-        var res = JSON.stringify(resName);
-        console.log(res);
+        var cost = parseInt($(this).attr("data-cost"));
+        var planetId = parseInt($(this).attr("data-planet"))
 
         var currentAmount = $(`.${currentId}amount`).attr("data-amount");
         var currentAmountInCargoSpan = $(`#cargo${resName}amount`);
+        var moneySpan = $('#money');
+        var currentMoney = parseInt(moneySpan.text());
+
         
         var currentAmountInCargo = currentAmountInCargoSpan.text();
         //TODO: Need to add the trader's cargo hold, too.
@@ -126,28 +133,60 @@ $(document).ready(function () {
 
 
         if ($(this).attr("data-buy") === "true") {
-            currentAmount--;
-            currentAmountInCargo++;
+            if(currentAmount > 0 && (currentMoney-cost) > 0)
+            {
+                currentAmount--;
+                currentMoney -= cost;
+                currentAmountInCargo++;            }
         } else {
-            currentAmount++;
-            currentAmountInCargo--;
+            if(currentAmountInCargo > 0){
+                currentAmount++;
+                currentMoney += cost;
+                currentAmountInCargo--;
+                updateHappiness();
+            }
         }
         // This updates the resources whenever a trade happens
         
+        function updateHappiness(){
+           
+            console.log(gameLoadData);
+             if(!gameLoadData.planets[planetId].isHappy){
+                var currentHappiness = parseInt(gameLoadData.planets[planetId].happinessCount);
+                
+                currentHappiness++;
+                console.log("Happy: " + currentHappiness);
+                if(currentHappiness > 25){
+                    happyPlanets++;
+                    gameLoadData.planets[planetId].isHappy = true;
+                    //for demo only
+                    if(happyPlanets === 3){
+                        //win
+                        console.log("YOU ARE WINNER")
+                        $('#win-con').text("TRUE");
+                    }
+                }
+                gameLoadData.planets[planetId].happinessCount = currentHappiness;
+            }
+        }
+
         var amountSpan = $(`.${currentId}amount`);
         console.log(amountSpan);
         $(`.${currentId}amount`).attr("data-amount", currentAmount);
         amountSpan.text(currentAmount);
         currentAmountInCargoSpan.text(" " + currentAmountInCargo);
-        function mapTradeResources(count,id){
+        moneySpan.text(currentMoney);
+        //Save money for DB
+        gameLoadData.planets[0].Resources[6].resCount = currentMoney;
+
+        
+
+        function mapTradeResources(count,id, resName){
             var id=id%5;
             if(id===0){ id=5}
+
             gameLoadData.planets[planetId].Resources[id-1].resCount=count;
         };
-
-        var trade = {
-
-        }
 
         mapTradeResources(currentAmount,currentId);
         //updateTradeValue(trade)
