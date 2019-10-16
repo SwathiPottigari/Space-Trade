@@ -5,29 +5,26 @@ Notes: Need somesort of intro cat to be telling story dialog.
 
 **INTRO TEXT SLIDE ONE**
 Welcome to the galaxy called the Copernicus Nebula. It may appear to be beautiful and peaceful from up
-above but this is the furthest thing from the truth. Over 100 years ago there was a meteor that made a
-devastating impact on one of planet of cats.
+above but this is the furthest thing from the truth. Over 100 years ago the Egyptian cat species began
+to over populate their planet. In an attempt to alleviate the overpopulation, the government
+invested to re-locate their population to the four neareast inhabitable planets.
+
 **INTRO TEXT SLIDE TWO**
-Within hours after the impact the planet was showing signs of a total ecological collapse. The air became
-thin and hard to breathe and all the vegatation around was starting to decay. Surviving cats on the
-planet knew that evacuating their home was no longer an optional choice they had to make.
+After reloacting the cats there was a struggle to assimilate to each new climage. Each planet has a different
+set of resources which left some cats with an overabundance of one resource and depleted in another.
+The government decided to step in again to test fund a new project to secure resources.
+
 **INTRO TEXT SLIDE THREE**
-The closest neighboring planet so happened to be inhabited by dogs, showed up in droves of cargo ships
-ready to evacuate the cats to safety. Since the kind gesture to house the surviving cats, life on the
-dog planet has not been the same. The planet was renamed "Cat-a-strophic Chaos", resources have become
-scarce and tentions between the two races have been high.
+If the test project is sucessful they will offically have a program to procure and redistribute resources from
+across the galaxy. The federation has chosen YOU out of many applicants to make that happen.
 **INTRO TEXT SLIDE FOUR**
-The galatic federation has decided to test fund a new project to secure resources. If the test project
-is sucessful they will offically have a program to procure and redistribute resources from across the
-galaxy. The federation has chosen YOU out of many applicants.
-**INTRO TEXT SLIDE FIVE**
 Do you understand this mission?
     Yes?        No?
 
 **IF YES INTRO DIAGLOG**
 We are pleased that you understand the imporance of this mission. We give you starting funds and fuel
 to start you off on your jouney. It is imporant for you to travel far and wide to find more sustainable
-food resources by trade. The whole planet of Cat-a-strophic Chaos is relying on YOU!
+food resources by trade. The whole planet is relying on YOU!
 
 **IF NO REPEAT SLIDE FOUR**
 
@@ -57,5 +54,16 @@ Notes: Planets with intro text.
 >> RESOURCES REDEFINED <<
 =================================================================
 Notes:
+
+-food
+
+-water
+
+-skooma
+
+-litter
+
+-yarn
+
 
 
