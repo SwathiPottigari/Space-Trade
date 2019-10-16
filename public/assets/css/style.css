@@ -44,9 +44,17 @@ form {
     text-align: center;
 }
 
+.select {
+    text-align: center;
+}
+
+.select,
+.login {
+    width: 60%;
+}
+
 .container {
     background: rgba(150, 175, 200, 0.5);
-    width: 60%;
     margin-top: 5%;
     margin-bottom: 5%;
     padding-top: 20px;
@@ -55,7 +63,7 @@ form {
 
 #user-name {
     font-family: 'Press Start 2P', cursive;
-    color: goldenrod;
+    color: #c66666;
 }
 
 .cargo {
@@ -79,5 +87,5 @@ form {
 
 #win-con {
     font-family: 'Press Start 2P', cursive;
-    color: greenyellow;
+    color: ;
 }
