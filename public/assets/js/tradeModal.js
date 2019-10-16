@@ -1,4 +1,4 @@
-var planetId ;
+var planetId;
 var happyPlanets = 0;
 $(document).ready(function () {
     //get data
@@ -13,9 +13,9 @@ $(document).ready(function () {
         //get planet data here
         planetId = $(this).attr('id');
         console.log("PlanetID " + planetId)
-        var planet = planetData(gameLoadData,planetId);
+        var planet = planetData(gameLoadData, planetId);
         gameLoadData.planets[0].Resources[5].resCount--;
-        $(".Progress-main").attr("value",gameLoadData.planets[0].Resources[5].resCount--);
+        $(".Progress-main").attr("value", gameLoadData.planets[0].Resources[5].resCount--);
         var modal;
         function drawModal(planet) {
             var div = $('#modalHolder');
@@ -51,7 +51,7 @@ $(document).ready(function () {
             contentColumn.append(contentContainer);
 
 
-            
+
             var table = $('<table>').attr("class", "resTable");
             var headerRow = $('<tr>');
             table.append(headerRow);
@@ -79,7 +79,7 @@ $(document).ready(function () {
                     .attr("data-cost", resource.cost)
                     .attr("data-planet", planetId)
                     .attr("data-id", resource.id)
-                    .attr("data-name",resource.name)
+                    .attr("data-name", resource.name)
                     .attr("data-buy", "true");
                 buttonData.append(resAddButton);
                 resRow.append(buttonData);
@@ -89,7 +89,7 @@ $(document).ready(function () {
                     .attr("data-cost", resource.cost)
                     .attr("data-planet", planetId)
                     .attr("data-id", resource.id)
-                    .attr("data-name",resource.name)
+                    .attr("data-name", resource.name)
                     .attr("data-buy", "false");
                 buttonData.append(resSubButton);
 
@@ -115,7 +115,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.trade', function (event) {
         // This decreases the fuel level
-    
+
         var currentId = $(this).attr("data-id");
         var resName = $(this).attr("data-name");
         var cost = parseInt($(this).attr("data-cost"));
@@ -126,20 +126,20 @@ $(document).ready(function () {
         var moneySpan = $('#money');
         var currentMoney = parseInt(moneySpan.text());
 
-        
+
         var currentAmountInCargo = currentAmountInCargoSpan.text();
         //TODO: Need to add the trader's cargo hold, too.
 
 
 
         if ($(this).attr("data-buy") === "true") {
-            if(currentAmount > 0 && (currentMoney-cost) > 0)
-            {
+            if (currentAmount > 0 && (currentMoney - cost) > 0) {
                 currentAmount--;
                 currentMoney -= cost;
-                currentAmountInCargo++;            }
+                currentAmountInCargo++;
+            }
         } else {
-            if(currentAmountInCargo > 0){
+            if (currentAmountInCargo > 0) {
                 currentAmount++;
                 currentMoney += cost;
                 currentAmountInCargo--;
@@ -147,20 +147,20 @@ $(document).ready(function () {
             }
         }
         // This updates the resources whenever a trade happens
-        
-        function updateHappiness(){
-           
+
+        function updateHappiness() {
+
             console.log(gameLoadData);
-             if(!gameLoadData.planets[planetId].isHappy){
+            if (!gameLoadData.planets[planetId].isHappy) {
                 var currentHappiness = parseInt(gameLoadData.planets[planetId].happinessCount);
-                
+
                 currentHappiness++;
                 console.log("Happy: " + currentHappiness);
-                if(currentHappiness > 25){
+                if (currentHappiness > 25) {
                     happyPlanets++;
                     gameLoadData.planets[planetId].isHappy = true;
                     //for demo only
-                    if(happyPlanets === 3){
+                    if (happyPlanets === 3) {
                         //win
                         console.log("YOU ARE WINNER")
                         $('#win-con').text("TRUE");
@@ -179,52 +179,57 @@ $(document).ready(function () {
         //Save money for DB
         gameLoadData.planets[0].Resources[6].resCount = currentMoney;
 
-        
 
-        function mapTradeResources(count,id, resName){
-            var id=id%5;
-            if(id===0){ id=5}
-
-            gameLoadData.planets[planetId].Resources[id-1].resCount=count;
+        mapTradeResources(currentAmount, currentId);
+        var resId;
+        function mapTradeResources(count, id) {
+            var id = id % 5;
+            if (id === 0) { id = 5 }
+            resId = id;
+            gameLoadData.planets[planetId].Resources[id - 1].resCount = count;
         };
 
-        mapTradeResources(currentAmount,currentId);
-        //updateTradeValue(trade)
+        var tradeDetails = {
+            id: gameLoadData.game.id,
+            resourceId: resId,
+            planetId: planetId,
+            resName: gameLoadData.planets[planetId].Resources[resId - 1].resName,
+            resCount: gameLoadData.planets[planetId].Resources[resId - 1].resCount
+        }
+
+        updateTradeValue(tradeDetails)
     });
 
- // This updates the resources whenever a trade happens
+    // This updates the resources whenever a trade happens
 
 
     function updateTradeValue(trade) {
-        $('.trade').attr("aria-disabled", "true");
-        $('.trade').addClass("disabled");
-
+        console.log("Dta for trade");
+        console.log(trade);
         $.ajax({
             method: "PUT",
             url: "/api/trade",
             data: trade
-        })
-            .then(function () {
-                $('.trade').attr("aria-disabled", "false");
-                $('.trade').removeClass("disabled");
-            });
+        }).then(function (result) {
+            alert(result);
+        });
     }
 
-    function planetData(data,id) {
+    function planetData(data, id) {
         let planet = {
             name: data.planets[id].Planet.planetName,
             traderName: data.planets[id].Planet.planetTrader,
-            resources: mapTradeResources(data.planets[id].Resources),            
+            resources: mapTradeResources(data.planets[id].Resources),
             // fuel: data.planets[id].Planet.fuel,
             isHappy: data.planets[id].isHappy,
             favoriteResource: data.planets[id].Planet.planetFavorite,
             uniqueResource: data.planets[id].Planet.planetUnique
         };
         return planet;
-    } 
+    }
 
     function mapTradeResources(resources) {
-        var array=[];
+        var array = [];
         for (var i = 0; i < resources.length; i++) {
             var obj = {
                 name: resources[i].resName,
