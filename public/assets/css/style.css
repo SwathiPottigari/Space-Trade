@@ -101,26 +101,40 @@ button {
 
 #win-con {
     font-family: 'Press Start 2P', cursive;
-    color: #65dd00;
+    color: #ff2525;
+    background-color: #ff2525;
 }
 
 /* INTRO MODAL */
+.modal-content {
+    background: url("../images/modal-background.jpg");
+    border-color: #757575;
+}
+
 .modal-header {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
-    color: #404040;
+    color: #28cc00;
 }
 
 .modal-body {
     font-family: 'Press Start 2P', cursive;
+    color: #28cc00;
 }
 
 .i-modal {
     text-align: center;
-    color: #404040;
 }
 
 /* TRADE MODAL */
-=======
-    /* background-color: #1a1a1a; */
+.close {
+    color: #65dd00;
+}
+
+.t-modal {
+    font-size: 14px;
+}
+
+th {
+    padding-right: 100px;
 }

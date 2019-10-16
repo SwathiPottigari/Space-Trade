@@ -1,17 +1,17 @@
 INSERT INTO planets(planetName,planetUnique,planetFavorite,planetImage,planetTrader,planetStory,createdAt,updatedAt)
-VALUES ("Osiris","x","x","/assets/images/space-cat1.png","FLAVOR TEXT HERE","x",NOW(),now());
+VALUES ("Osiris","x","x","x","x","x",NOW(),now());
 
 INSERT INTO planets(planetName,planetUnique,planetFavorite,planetImage,planetTrader,planetStory,createdAt,updatedAt)
-VALUES ("Anubis","x","x","/assets/images/space-cat2.png","FLAVOR TEXT HERE","x",NOW(),now());
+VALUES ("Anubis","x","x","x","x","x",NOW(),now());
 
 INSERT INTO planets(planetName,planetUnique,planetFavorite,planetImage,planetTrader,planetStory,createdAt,updatedAt)
-VALUES ("Bastion","x","x","/assets/images/space-cat3.png","FLAVOR TEXT HERE","x",NOW(),now());
+VALUES ("Bastion","x","x","x","x","x",NOW(),now());
 
 INSERT INTO planets(planetName,planetUnique,planetFavorite,planetImage,planetTrader,planetStory,createdAt,updatedAt)
-VALUES ("Nephthys","x","x","/assets/images/space-cat5.png","FLAVOR TEXT HERE","x",NOW(),now());
+VALUES ("Nephthys","x","x","x","x","x",NOW(),now());
 
 INSERT INTO planets(planetName,planetUnique,planetFavorite,planetImage,planetTrader,planetStory,createdAt,updatedAt)
-VALUES ("Sobek","x","x","/assets/images/space-cat4.png","FLAVOR TEXT HERE","x",NOW(),now());
+VALUES ("Sobek","x","x","x","x","x",NOW(),now());
 
 INSERT INTO planets(planetName,planetUnique,planetFavorite,planetImage,planetTrader,planetStory,createdAt,updatedAt)
-VALUES ("USER","x","x","/assets/images/space-cat1.png","FLAVOR TEXT HERE","x",NOW(),now());
+VALUES ("USER","x","x","x","x","x",NOW(),now());
