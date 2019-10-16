@@ -1,4 +1,5 @@
 var planetId ;
+var happyPlanets = 0;
 $(document).ready(function () {
     //get data
     //create modal with data
@@ -11,6 +12,7 @@ $(document).ready(function () {
     $(".planet").click(function (event) {
         //get planet data here
         planetId = $(this).attr('id');
+        console.log("PlanetID " + planetId)
         var planet = planetData(gameLoadData,planetId);
         gameLoadData.planets[0].Resources[5].resCount--;
         $(".Progress-main").attr("value",gameLoadData.planets[0].Resources[5].resCount--);
@@ -135,17 +137,38 @@ $(document).ready(function () {
             {
                 currentAmount--;
                 currentMoney -= cost;
-                currentAmountInCargo++;
-            }
+                currentAmountInCargo++;            }
         } else {
             if(currentAmountInCargo > 0){
                 currentAmount++;
                 currentMoney += cost;
                 currentAmountInCargo--;
+                updateHappiness();
             }
         }
         // This updates the resources whenever a trade happens
         
+        function updateHappiness(){
+           
+            console.log(gameLoadData);
+             if(!gameLoadData.planets[planetId].isHappy){
+                var currentHappiness = parseInt(gameLoadData.planets[planetId].happinessCount);
+                
+                currentHappiness++;
+                console.log("Happy: " + currentHappiness);
+                if(currentHappiness > 25){
+                    happyPlanets++;
+                    gameLoadData.planets[planetId].isHappy = true;
+                    //for demo only
+                    if(happyPlanets === 3){
+                        //win
+                        console.log("YOU ARE WINNER")
+                    }
+                }
+                gameLoadData.planets[planetId].happinessCount = currentHappiness;
+            }
+        }
+
         var amountSpan = $(`.${currentId}amount`);
         console.log(amountSpan);
         $(`.${currentId}amount`).attr("data-amount", currentAmount);
