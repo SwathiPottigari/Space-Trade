@@ -1,3 +1,4 @@
+var planetId ;
 $(document).ready(function () {
     //get data
     //create modal with data
@@ -9,10 +10,8 @@ $(document).ready(function () {
 
     $(".planet").click(function (event) {
         //get planet data here
-        var id = $(this).attr('id');
-        var planet = planetData(gameLoadData,id);
-        console.log(planet)
-
+        planetId = $(this).attr('id');
+        var planet = planetData(gameLoadData,planetId);
         var modal;
         function drawModal(planet) {
             var div = $('#modalHolder');
@@ -123,6 +122,8 @@ $(document).ready(function () {
         $(`#${currentId}amount`).attr("data-amount", currentAmount);
         amountSpan.text(currentAmount);
 
+        // This updates the resources whenever a trade happens
+        mapTradeResources(currentAmount,currentId);
         var trade = {
 
         }
@@ -130,6 +131,12 @@ $(document).ready(function () {
         //updateTradeValue(trade)
     });
 
+ // This updates the resources whenever a trade happens
+function mapTradeResources(count,id){
+    var id=id%5;
+    if(id===0){ id=5}
+    gameLoadData.planets[planetId].Resources[id-1].resCount=count;
+};
 
     function updateTradeValue(trade) {
         $('.trade').attr("aria-disabled", "true");
