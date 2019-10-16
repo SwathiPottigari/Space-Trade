@@ -19,7 +19,7 @@ $(document).ready(function () {
         var modal;
         function drawModal(planet) {
             var div = $('#modalHolder');
-            modal = $('<div>').addClass("modal");
+            modal = $('<div>').addClass("modal trade-modal");
             modal.attr("tabindex", "-1");
             modal.attr("role", "dialog");
             var modalDialog = $('<div>').addClass("modal-content");

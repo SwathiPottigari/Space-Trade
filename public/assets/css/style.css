@@ -6,22 +6,29 @@ body {
 /* LOGIN TITLE */
 h1 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 55px;
+    font-size: 51px;
     text-align: center;
-    color: #ffa64d;
+    color: #65dd00;
     margin-top: 5%;
 }
 
 h2 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
-    color: #ffff66;
+    color: #65dd00;
 }
 
 /* LOGIN FORM */
+.log-body,
+.select-body {
+    background: #c1c1c1;
+}
+
 form {
     font-family: 'Press Start 2P', cursive;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .formBtn {
@@ -35,7 +42,11 @@ form {
 .select,
 .login {
     font-family: 'Press Start 2P', cursive;
-    background: rgba(150, 175, 200, 0.5);
+    background: url("../images/modal-background.jpg");
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #28cc00;
+    border: 8px solid #757575;
     margin-top: 5%;
     margin-bottom: 5%;
     padding-top: 20px;
@@ -69,8 +80,8 @@ button {
 /* GAME PAGE */
 .main {
     background: rgba(150, 175, 200, 0.5);
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 8%;
+    margin-bottom: 0;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -86,7 +97,7 @@ button {
     color: #ffff66;
 }
 
-#money,
+#star-bucks,
 #fuel,
 #cargo-hold {
     font-family: 'Press Start 2P', cursive;
@@ -109,6 +120,8 @@ button {
 .modal-content {
     background: url("../images/modal-background.jpg");
     border-color: #757575;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .modal-header {
@@ -127,6 +140,14 @@ button {
 }
 
 /* TRADE MODAL */
+.trade-modal {
+    width: 75%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+}
+
 .close {
     color: #65dd00;
 }
@@ -136,5 +157,5 @@ button {
 }
 
 th {
-    padding-right: 100px;
+    padding-right: 80px;
 }
