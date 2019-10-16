@@ -12,6 +12,8 @@ $(document).ready(function () {
         //get planet data here
         planetId = $(this).attr('id');
         var planet = planetData(gameLoadData,planetId);
+        gameLoadData.planets[0].Resources[5].resCount--;
+        $(".Progress-main").attr("value",gameLoadData.planets[0].Resources[5].resCount--);
         var modal;
         function drawModal(planet) {
             var div = $('#modalHolder');
@@ -47,7 +49,7 @@ $(document).ready(function () {
             contentColumn.append(contentContainer);
 
 
-            //var headerDiv = $('<div>').addClass("row");
+            
             var table = $('<table>').attr("class", "resTable");
             var headerRow = $('<tr>');
             table.append(headerRow);
@@ -63,6 +65,7 @@ $(document).ready(function () {
             contentColumn.append(table);
 
             planet.resources.forEach(resource => {
+                console.log(resource);
                 var resRow = $('<tr>');
                 var resourceName = $('<td>');
                 resourceName.text(resource.name);
@@ -73,6 +76,7 @@ $(document).ready(function () {
                 resAddButton.attr("class", "trade")
                     .attr("data-cost", resource.cost)
                     .attr("data-id", resource.id)
+                    .attr("data-name",resource.name)
                     .attr("data-buy", "true");
                 buttonData.append(resAddButton);
                 resRow.append(buttonData);
@@ -81,12 +85,13 @@ $(document).ready(function () {
                 resSubButton.attr("class", "trade")
                     .attr("data-cost", resource.cost)
                     .attr("data-id", resource.id)
+                    .attr("data-name",resource.name)
                     .attr("data-buy", "false");
                 buttonData.append(resSubButton);
 
                 var resAmount = $('<td>').text(resource.amount)
                     .attr("data-amount", resource.amount)
-                resAmount.attr("id", `${resource.id}amount`);
+                resAmount.attr("class", `${resource.id}amount`);
                 var resCost = $('<td>').text(resource.cost);
                 resRow.append(resAmount, resCost);
 
@@ -107,27 +112,33 @@ $(document).ready(function () {
     $(document).on('click', '.trade', function (event) {
         // This decreases the fuel level
     
-        gameLoadData.planets[0].Resources[5].resCount--;
-        $(".Progress-main").attr("value",gameLoadData.planets[0].Resources[5].resCount--);
-
         var currentId = $(this).attr("data-id");
-        
-        var currentAmount = $(`#${currentId}amount`).attr("data-amount");
+        var resName = $(this).attr("data-name");
+        var res = JSON.stringify(resName);
+        console.log(res);
 
+        var currentAmount = $(`.${currentId}amount`).attr("data-amount");
+        var currentAmountInCargoSpan = $(`#cargo${resName}amount`);
+        
+        var currentAmountInCargo = currentAmountInCargoSpan.text();
         //TODO: Need to add the trader's cargo hold, too.
+
+
 
         if ($(this).attr("data-buy") === "true") {
             currentAmount--;
+            currentAmountInCargo++;
         } else {
             currentAmount++;
+            currentAmountInCargo--;
         }
         // This updates the resources whenever a trade happens
-        mapTradeResources(currentAmount,currentId);
-
-        var amountSpan = $(`#${currentId}amount`);
-        $(`#${currentId}amount`).attr("data-amount", currentAmount);
+        
+        var amountSpan = $(`.${currentId}amount`);
+        console.log(amountSpan);
+        $(`.${currentId}amount`).attr("data-amount", currentAmount);
         amountSpan.text(currentAmount);
-
+        currentAmountInCargoSpan.text(" " + currentAmountInCargo);
         function mapTradeResources(count,id){
             var id=id%5;
             if(id===0){ id=5}
@@ -138,6 +149,7 @@ $(document).ready(function () {
 
         }
 
+        mapTradeResources(currentAmount,currentId);
         //updateTradeValue(trade)
     });
 
