@@ -28,24 +28,24 @@ $(document).ready(function () {
             var modalContent = $("<div>").addClass("modal-content");
             modalDialog.append(modalContent);
             var modalHeader = $('<h5>').addClass("modal-header");
-            modalHeader.text(`Welcome to ${planet.name}, would you like to trade?`);
+            modalHeader.text(`Welcome to ${planet.name}, what would you like to trade?`);
             modalContent.append(modalHeader);
             var dismissButton = $('<button>').addClass("close");
             dismissButton.attr("data-dismiss", "modal");
-            dismissButton.attr("aria-label", "Close");
+            dismissButton.attr("aria-label", "X");
             var dismissSpan = $('<span>');
             dismissSpan.attr("aria-hidden", "true");
-            dismissSpan.text("Close")
+            dismissSpan.text("X")
             dismissButton.append(dismissSpan);
             modalHeader.append(dismissButton);
             var modalBody = $('<div>').addClass("modal-body container t-modal");
 
             var mainRow = $('<div>').addClass("row");
-            var portraitColumn = $('<div>').addClass("col-md-3");
+            var portraitColumn = $('<div>').addClass("col-md-2");
             mainRow.append(portraitColumn);
-            var portrait = $('<img>');
-            portraitColumn.append(portrait);
-            var contentColumn = $('<div>').addClass("col-md-6");
+            // var portrait = $('<img>');
+            // portraitColumn.append(portrait);
+            var contentColumn = $('<div>').addClass("col-md-10");
             mainRow.append(contentColumn);
             var contentContainer = $('<div>').addClass("container");
             contentColumn.append(contentContainer);
@@ -58,10 +58,10 @@ $(document).ready(function () {
 
 
 
-            var resourceNameLabel = $('<th>').text("Resource");
-            var operation = $("<th>").text("Operation");
-            var planetAmount = $("<th>").text("Qty");
-            var cost = $("<th>").text("Cost");
+            var resourceNameLabel = $('<th>').text("RESOURCE");
+            var operation = $("<th>").text("OPERATION");
+            var planetAmount = $("<th>").text("QTY");
+            var cost = $("<th>").text("COST");
 
             headerRow.append(resourceNameLabel, operation, planetAmount, cost);
             contentColumn.append(table);
