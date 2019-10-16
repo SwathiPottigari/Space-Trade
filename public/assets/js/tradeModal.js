@@ -3,6 +3,10 @@ $(document).ready(function () {
     //create modal with data
     //dummy data for development
 
+    var instructionModal = $('#instructionModal');
+    instructionModal.modal();
+
+
     $(".planet").click(function (event) {
         //get planet data here
         var id = $(this).attr('id');
