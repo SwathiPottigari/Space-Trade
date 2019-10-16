@@ -141,7 +141,30 @@ function saveGameData(req, res) {
 }
 
 router.put("/api/trade", function (req, res) {
-    console.log("recieved a request...");
+    console.log(req);
+    db.GamesState.findOne({
+        where: {
+            GameId: req.body.id,
+            PlanetId:req.body.planetId
+        }
+    }).then(function(result){
+        console.log("Entered");
+        console.log(result.dataValues.id)
+        db.GameStateResources.update({
+            resCount: req.body.resCount,
+            updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss")
+        },
+            {
+                where: {
+                    GamesStateId: result.dataValues.id,
+                    resName: req.body.resName
+                }
+            }
+        ).then(function (dbPost) {
+            // console.log("hello");
+            console.log(dbPost);
+        });
+    })    
 });
 
 router.put("/api/updateGame", function (req, res) {
