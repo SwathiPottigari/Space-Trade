@@ -6,7 +6,7 @@ Notes: Need somesort of intro cat to be telling story dialog.
 **INTRO TEXT SLIDE ONE**
 Welcome to the galaxy called the Copernicus Nebula. It may appear to be beautiful and peaceful from up
 above but this is the furthest thing from the truth. Over 100 years ago there was a meteor that made a
-devastating impact on planet of cats.
+devastating impact on one of planet of cats.
 **INTRO TEXT SLIDE TWO**
 Within hours after the impact the planet was showing signs of a total ecological collapse. The air became
 thin and hard to breathe and all the vegatation around was starting to decay. Surviving cats on the
@@ -38,124 +38,24 @@ food resources by trade. The whole planet of Cat-a-strophic Chaos is relying on 
 
 Notes: Planets with intro text.
 
-1. planetONE = Cat-a-trophic Chaos
-Originally known as Lab-ra-cadabra-dor is inhabited buy both Cats and Dogs. Tensions currently remain
-high as the cat population increased steadily and caused a scarcity of food resources among the inhabitants.
-This is your home planet, find resouces to feed your people!
+1. planetONE = Osiris
 
-2. planetTWO = Deja Moo
-Simply a farm planet where there are no humans. All laws and trade are controlled by alpha pigs. The 
-pigs dictate the way of living by having high taxes. Each animal must contribute a personal resource
-once a week which the pigs trade internationally for money. What greedy pigs!
 
-3. planetTHREE = Hue-Manatee
-A gentle aquatic planet where there is no war or work. This planet is dominantly filled with friendly 
-sealife like starfish, manatees and seacucumbers. No sharks live here. All life here is slow and
-peaceful. The inhabitants of this planet simply love grazing on food and basking out in the sun.
-The only stressful thing these residents have to worry about is simply getting to things on-time.
-If anything were to befall this peaceful planet... Iron Man-atee will save them!
+2. planetTWO = Nephthys
 
-4. planetFOUR = Dumble-dope
-Magic... moons... and mystical things. Here is the part where I rhyme because it's like we are
-spell-casting things. This planet obviously makes magic but unfourtunately sometimes the outcomes
-end up tragic. This is the furthest planet, far away, but all these mythical creatures are here to
-stay.
 
-5. planetFIVE = Ice-olated
-Nothing but hard ice for miles away. At first glance during the day it seems like a desolate place
-with absolutly no inhabitants but on closer inspection there are pengins hiding all over the place.
-During the night, almost every night, every animal of all races compete in competitive ice skating!
+3. planetTHREE = Sobek
+
+
+4. planetFOUR = Bastion
+
+
+5. planetFIVE = Anubis
+
 
 =================================================================
 >> RESOURCES REDEFINED <<
 =================================================================
-Notes: Each planet will choose a max FOUR resouces (some will have less) that will make up the planets
-unique resource table. Resource table will have a MAX of two in each collumn. Each planet will require
-ONE resource they need except main planet. Cat-a-strophic planet needs only (3) counts TOTAL food item
-(they will start off with vegtables for demo gameplay to go faster). Either one of each or mutiples of
-the same to reach three. For other planets they only have ONE reqirement to fill but if we had more time
-it would be more than one. I will make example tables of a planets unique resource table. VALUES already
-labeled. Also note, you may trade with a planet even though you aren't giving them items they need. You
-may change the amount of values for planets if you don't like it. :)
-
-> Food <
-1. FoodONE - Meat
-2. FoodTWO - Vegtables
-3. FoodTHREE - Seafood
---------------------------------------------
-> Energy Types <
-1. EnergyONE - Water (drinking water)
-2. EnergyTWO - Fuel
-3. EnergyTHREE - Money <--- This mechanic is necessary because we can trade ITEMS for Money
---------------------------------------------
-> Unique Resouces <
-1. UniqueONE - Medicine
-2. UniqueTWO - Technology (information sharing)
-3. UniqueTHREE - Magic (used to double up an item)
-
-=================================================================
->> PLANET TRADING RESOURCE TABLES <<
-=================================================================
-
-planetONE = Cat-a-strophic Chaos
-
-> INVENTORY ITEMS <
-1. foodTWO = vegtables
-2. energyTWO = fuel <--- goverment funded us tons of extra fuel for resource fund/trade
-3. energyTHREE = Money
-4. uniqueONE = Medicine
-
-> NEEDED ITEMS <
-1. FoodONE = Meat
-2. FoodTWO = Seafood
-
-================================================================
-
-planetTWO = Deja Moo
-
-> INVENTORY ITEMS <
-1. FoodONE - Meat
-2. FoodTWO - Vegtables
-3. FoodTHREE - Seafood
-4. EnergyONE - Water
-
-> NEEDED ITEMS <
-1. EnergyTHREE - Money
-
-===============================================================
-
-planetTHREE = Hue-Manatee
-
-> INVENTORY ITEMS <
-1. FoodTHREE - Seafood
-2. EnergyTHREE - Money
-3. UniqueONE - Medicine
-> NEEDED ITEMS <
-1. EnergyTWO - Fuel
-
-==============================================================
-
-planetFOUR = Dumble-dope
-
-> INVENTORY ITEMS <
-1. FoodONE - Meat
-2. EnergyTHREE - Money
-3. UniqueTHREE - Magic
-4. UniqueTWO - Technology
-
-> NEEDED ITEMS <
-1. uniqueONE = Medicine
-
-===============================================================
-
-planetFIVE = Ice-olated
-1.  EnergyONE - Water
-2.  FoodTHREE - Seafood
-3.  EnergyTWO - Fuel
-
-> NEEDED ITEMS <
-1.  FoodTWO - Vegtables
-
-===============================================================
+Notes:
 
 
