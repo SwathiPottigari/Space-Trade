@@ -146,7 +146,7 @@ $(document).ready(function () {
             name: data.planets[id].Planet.planetName,
             traderName: data.planets[id].Planet.traderName,
             resources: mapResources(data.planets[id].Resources),            
-            // fuel: data.planets[id].Resources,
+            fuel: data.planets[id].Planet.fuel,
             isHappy: data.planets[id].isHappy,
             favoriteResource: data.planets[id].Planet.planetFavorite,
             uniqueResource: data.planets[id].Planet.planetUnique
