@@ -75,6 +75,7 @@ $(document).ready(function () {
                 resAddButton.text("BUY");
                 resAddButton.attr("class", "trade")
                     .attr("data-cost", resource.cost)
+                    .attr("data-planet", planetId)
                     .attr("data-id", resource.id)
                     .attr("data-name",resource.name)
                     .attr("data-buy", "true");
@@ -84,6 +85,7 @@ $(document).ready(function () {
                 resSubButton.text("SELL");
                 resSubButton.attr("class", "trade")
                     .attr("data-cost", resource.cost)
+                    .attr("data-planet", planetId)
                     .attr("data-id", resource.id)
                     .attr("data-name",resource.name)
                     .attr("data-buy", "false");
@@ -114,11 +116,14 @@ $(document).ready(function () {
     
         var currentId = $(this).attr("data-id");
         var resName = $(this).attr("data-name");
-        var res = JSON.stringify(resName);
-        console.log(res);
+        var cost = parseInt($(this).attr("data-cost"));
+        var planetId = parseInt($(this).attr("data-planet"))
 
         var currentAmount = $(`.${currentId}amount`).attr("data-amount");
         var currentAmountInCargoSpan = $(`#cargo${resName}amount`);
+        var moneySpan = $('#money');
+        var currentMoney = parseInt(moneySpan.text());
+
         
         var currentAmountInCargo = currentAmountInCargoSpan.text();
         //TODO: Need to add the trader's cargo hold, too.
@@ -126,11 +131,18 @@ $(document).ready(function () {
 
 
         if ($(this).attr("data-buy") === "true") {
-            currentAmount--;
-            currentAmountInCargo++;
+            if(currentAmount > 0 && (currentMoney-cost) > 0)
+            {
+                currentAmount--;
+                currentMoney -= cost;
+                currentAmountInCargo++;
+            }
         } else {
-            currentAmount++;
-            currentAmountInCargo--;
+            if(currentAmountInCargo > 0){
+                currentAmount++;
+                currentMoney += cost;
+                currentAmountInCargo--;
+            }
         }
         // This updates the resources whenever a trade happens
         
@@ -139,15 +151,18 @@ $(document).ready(function () {
         $(`.${currentId}amount`).attr("data-amount", currentAmount);
         amountSpan.text(currentAmount);
         currentAmountInCargoSpan.text(" " + currentAmountInCargo);
-        function mapTradeResources(count,id){
+        moneySpan.text(currentMoney);
+        //Save money for DB
+        gameLoadData.planets[0].Resources[6].resCount = currentMoney;
+
+        
+
+        function mapTradeResources(count,id, resName){
             var id=id%5;
             if(id===0){ id=5}
+
             gameLoadData.planets[planetId].Resources[id-1].resCount=count;
         };
-
-        var trade = {
-
-        }
 
         mapTradeResources(currentAmount,currentId);
         //updateTradeValue(trade)

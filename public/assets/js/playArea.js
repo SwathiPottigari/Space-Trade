@@ -29,6 +29,7 @@ function mapData(data) {
   var happiness = calculateHappiness(data.planets);
   $("#win-con").text(happiness);
   $(".Progress-main").attr("value",data.planets[0].Resources[5].resCount);
+  $('#money').text(data.planets[0].Resources[6].resCount);
   for (var i = 0; i < 4; i++) {
     $("#res-" + i).text(data.planets[0].Resources[i].resName);
     var amountSpan = $("<span>").text(" " + data.planets[0].Resources[i].resCount);
