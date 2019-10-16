@@ -10,7 +10,7 @@ module.exports=function (sequelize, DataTypes){
         },
         
         resValue: {
-            type: DataTypes.TEXT,
+            type: DataTypes.INTEGER,
         },
         resCount: {
             type: DataTypes.INTEGER,
