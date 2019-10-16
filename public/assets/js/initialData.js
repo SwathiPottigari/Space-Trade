@@ -181,5 +181,49 @@ var initialData = {
     happinessCount: 20,
     isHappy: true
  
-    }
+    },
+    {
+        id: 6,
+            // **USER** //
+           
+            resources: [{
+                resName: "Food",
+                resCount: 5,
+                resValue: 10
+                },
+                {
+                resName:"Medicine",
+                resCount: 5,
+                resValue: 10
+                },
+                {
+                resName: "Entertainment",
+                resCount: 5,
+                resValue: 10
+                },
+                {
+                resName: "Technology",
+                resCount: 5,
+                resValue: 10
+                },
+                {
+                resName: "Water",
+                resCount: 5,
+                resValue: 10
+                },
+                {
+                    resName: "Fuel",
+                    resCount: 100,
+                    resValue: 10
+                    },
+                    {
+                        resName: "Money",
+                        resCount: 1000,
+                        resValue: 1000
+                        }
+                ],
+        happinessCount: 20,
+        isHappy: true
+     
+        }
     ]};

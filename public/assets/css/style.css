@@ -2,14 +2,38 @@ body {
     background: url("../images/background.jpg");
 }
 
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 55px;
+    text-align: center;
+    color: #ffa64d;
+    margin-top: 5%;
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+    text-align: center;
+    color: #ffff66;
+}
+
+label {
+    color: #b5ffff;
+}
+
 img {
     border: 4px solid #ffffff;
-    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.planet:hover {
+    border: 4px solid #65dd00;
 }
 
 p {
     font-family: 'Press Start 2P', cursive;
-    color: lightblue;
+    color: #b5ffff;
 }
 
 button {
@@ -17,23 +41,39 @@ button {
     font-size: 14px;
 }
 
+form {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.formBtn {
+    text-align: center;
+}
+
+.select {
+    text-align: center;
+}
+
+.select,
+.login {
+    width: 70%;
+}
+
 .container {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(150, 175, 200, 0.5);
     margin-top: 5%;
     margin-bottom: 5%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-#user-name {
-    font-family: 'Press Start 2P', cursive;
-    color: goldenrod;
+.map {
+    text-align: center;
 }
 
 .cargo {
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
-    color: palegoldenrod;
+    color: #ffff66;
 }
 
 #money,
@@ -41,10 +81,26 @@ button {
 #cargo-hold {
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
-    color: palegoldenrod;
+    color: #ffff66;
+}
+
+#win-title {
+    font-family: 'Press Start 2P', cursive;
+    color: #b5ffff;
 }
 
 #win-con {
     font-family: 'Press Start 2P', cursive;
-    color: lightblue;
+    color: #65dd00;
+}
+
+.modal-header {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    color: #404040;
+}
+
+.modal-body {
+    text-align: center;
+    background-color: #1a1a1a;
 }

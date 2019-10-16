@@ -31,7 +31,6 @@ $('#new').click(function(event){
 
 
 $('#newAccountBtn').click(function (event) {
-   alert("hello");
     event.preventDefault();
     var email = $('#email').val();
     var pword = $('#pword').val();

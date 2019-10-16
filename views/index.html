@@ -22,20 +22,20 @@
 
     <div class="container">
         
-
         <div class="row">
             <!-- HUD -->
             <div class="col-md-3">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col">
                         <span id="user-name">User Name</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col">
                         <img id="user-img" class="img-fluid" src="/assets/images/space-cat1.png" alt="">
                     </div>
                 </div>
+                <br>
                 <div class="row">
                     <div class="col">
                         <span id="money">Star Bucks:</span>
@@ -44,6 +44,11 @@
                 <div class="row">
                     <div class="col">
                         <span id="fuel">Fuel:</span>
+                        <progress max="100" value="100" class="Progress-main" aria-labelledby="Progress-id">	
+                            <div class="Progress-bar" role="presentation">	
+                                <span class="Progress-value" style="width: 80%;">&nbsp;</span>	
+                            </div>	
+                        </progress>
                     </div>
                 </div>
                 <div class="row">
@@ -53,46 +58,47 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <span id="" class="cargo"></span>
+                        <span id="res-0" class="cargo"></span>
                     </div>
                     <div class="col-md-6">
-                        <span id="" class="cargo"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <span id="" class="cargo"></span>
-                    </div>
-                    <div class="col-md-6">
-                        <span id="" class="cargo"></span>
+                        <span id="res-1" class="cargo"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <span id="" class="cargo"></span>
+                        <span id="res-2" class="cargo"></span>
                     </div>
                     <div class="col-md-6">
-                        <span id="" class="cargo"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <span id="" class="cargo"></span>
-                    </div>
-                    <div class="col-md-6">
-                        <span id="" class="cargo"></span>
+                        <span id="res-3" class="cargo"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <span id="" class="cargo"></span>
+                        <span id="res-4" class="cargo"></span>
                     </div>
                     <div class="col-md-6">
-                        <span id="" class="cargo"></span>
+                        <span id="res-5" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="res-6" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="res-7" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="res-8" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="res-9" class="cargo"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
+                        <br>
                         <button id="logOut">SAVE & QUIT</button>
                     </div>
                 </div>
@@ -100,38 +106,63 @@
             <!-- END HUD -->
 
             <!-- MAP -->
-            <div class="col-md-9">
+            <div class="col-md-9 map">
                 <div class="row">
                     <div class="col-md-4">
-                        <span id="win-con">Planetary<br>Happiness:</span>
+                        <span id="win-title">Planetary<br>Happiness:</span>
+                        <br>
+                        <span id="win-con"> </span>
                     </div>
                     <div class="col-md-4">
-                        <p>Planet Name</p>
-                        <img class="img-fluid planet" src="/assets/images/planet1.jpg" alt="">
+                        <p>Osiris</p>
+                        <img id="5" class="img-fluid planet" src="/assets/images/planet1.jpg" alt="">
                     </div>
                     <div class="col-md-4">
-                        <p>Planet Name</p>
-                        <img class="img-fluid planet" src="/assets/images/planet2.jpg" alt="">
+                        <p>Anubis</p>
+                        <img id="4" class="img-fluid planet" src="/assets/images/planet2.jpg" alt="">
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-md-4">
-                        <p>Planet Name</p>
-                        <img class="img-fluid planet" src="/assets/images/planet3.jpg" alt="">
+                        <p>Bastion</p>
+                        <img id="3" class="img-fluid planet" src="/assets/images/planet3.jpg" alt="">
                     </div>
                     <div class="col-md-4">
-                        <p>Planet Name</p>
-                        <img class="img-fluid planet" src="/assets/images/planet4.jpg" alt="">
+                        <p>Nephthys</p>
+                        <img id="2" class="img-fluid planet" src="/assets/images/planet4.jpg" alt="">
                     </div>
                     <div class="col-md-4">
-                        <p>Planet Name</p>
-                        <img class="img-fluid planet" src="/assets/images/planet5.jpg" alt="">
+                        <p>Sobek</p>
+                        <img id="1" class="img-fluid planet" src="/assets/images/planet5.jpg" alt="">
                     </div>
                 </div>
             </div>
             <!-- END MAP -->
         </div>
     </div>
+
+    <!--Instruction/Story Modal-->
+    <div class="modal fade" id="instructionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="instructionModalTitle">Welcome to the Galaxy!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Your goal is to bring happiness to the galaxy - through TRADE.</p>
+                <p>Providing planets with enough basic resources and an abundance of their favorite resource will make that planet happy. When all planets are happy, you win.</p>
+                <p>Each planet produces one unique resource and has one favorite resource. These resources are more expensive, but provide much more happiness, so be strategic in your purchasing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

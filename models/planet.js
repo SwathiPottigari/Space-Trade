@@ -30,15 +30,10 @@ module.exports = function(sequelize, DataTypes) {
 
       planetStory: {
         type: DataTypes.TEXT,
-      },
+      }
     });
 
-    Planet.associate = function (models) {
-      // Planet.belongsTo(models.Resource,{
-      //     foreignKey: {
-      //         allowNull: false
-      //     }
-      // });
+    Planet.associate = function (models) {      
       Planet.hasMany(models.GamesState);
   };
  
