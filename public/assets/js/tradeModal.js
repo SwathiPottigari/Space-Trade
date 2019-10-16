@@ -105,7 +105,11 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.trade', function (event) {
-        console.log("Main Function");
+        // This decreases the fuel level
+    
+        gameLoadData.planets[0].Resources[5].resCount--;
+        $(".Progress-main").attr("value",gameLoadData.planets[0].Resources[5].resCount--);
+
         var currentId = $(this).attr("data-id");
         
         var currentAmount = $(`#${currentId}amount`).attr("data-amount");

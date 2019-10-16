@@ -28,6 +28,7 @@ function mapData(data) {
 
   var happiness = calculateHappiness(data.planets);
   $("#win-con").text(happiness);
+  $(".Progress-main").attr("value",data.planets[0].Resources[5].resCount);
   for (var i = 0; i < data.planets[0].Resources.length; i++) {
     $("#res-" + i).text(data.planets[0].Resources[i].resName);
   }
@@ -36,7 +37,7 @@ function mapData(data) {
 $("#logOut").click(function (event) {
   var gameData = createSaveData(gameLoadData);
   // console.log("this is the data to be saved");
-  // console.log(gameData);
+  console.log(gameData);
   $.ajax({
     method: "PUT",
     url: "/api/updateGame",
@@ -49,7 +50,6 @@ $("#logOut").click(function (event) {
 });
 
 function createSaveData(data) {
-  console.log(data);
   var planetsData = {
     id: data.game.id,
     difficulty: data.game.difficulty,
