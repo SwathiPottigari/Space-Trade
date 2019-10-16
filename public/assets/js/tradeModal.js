@@ -105,9 +105,9 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.trade', function (event) {
-        console.log("HERE")
+        console.log("Main Function");
         var currentId = $(this).attr("data-id");
-        console.log(currentId);
+        
         var currentAmount = $(`#${currentId}amount`).attr("data-amount");
 
         //TODO: Need to add the trader's cargo hold, too.
@@ -117,13 +117,19 @@ $(document).ready(function () {
         } else {
             currentAmount++;
         }
+        // This updates the resources whenever a trade happens
+        mapTradeResources(currentAmount,currentId);
 
         var amountSpan = $(`#${currentId}amount`);
         $(`#${currentId}amount`).attr("data-amount", currentAmount);
         amountSpan.text(currentAmount);
 
-        // This updates the resources whenever a trade happens
-        mapTradeResources(currentAmount,currentId);
+        function mapTradeResources(count,id){
+            var id=id%5;
+            if(id===0){ id=5}
+            gameLoadData.planets[planetId].Resources[id-1].resCount=count;
+        };
+
         var trade = {
 
         }
@@ -132,11 +138,7 @@ $(document).ready(function () {
     });
 
  // This updates the resources whenever a trade happens
-function mapTradeResources(count,id){
-    var id=id%5;
-    if(id===0){ id=5}
-    gameLoadData.planets[planetId].Resources[id-1].resCount=count;
-};
+
 
     function updateTradeValue(trade) {
         $('.trade').attr("aria-disabled", "true");
@@ -157,7 +159,7 @@ function mapTradeResources(count,id){
         let planet = {
             name: data.planets[id].Planet.planetName,
             traderName: data.planets[id].Planet.planetTrader,
-            resources: mapResources(data.planets[id].Resources),            
+            resources: mapTradeResources(data.planets[id].Resources),            
             // fuel: data.planets[id].Planet.fuel,
             isHappy: data.planets[id].isHappy,
             favoriteResource: data.planets[id].Planet.planetFavorite,
@@ -166,7 +168,7 @@ function mapTradeResources(count,id){
         return planet;
     } 
 
-    function mapResources(resources) {
+    function mapTradeResources(resources) {
         var array=[];
         for (var i = 0; i < resources.length; i++) {
             var obj = {
