@@ -27,10 +27,10 @@ function calculateHappiness(data) {
 function mapData(data) {
   
   var happiness = calculateHappiness(data.planets);
-
   $("#win-con").text(happiness);
-  $("#res-0").text(data.planets[5].Resources[0])
-
+  for(var i=0;i<data.planets[5].Resources.length;i++){
+    $("#res-"+i).text(data.planets[5].Resources[i].resName);
+  }
 };
 
 $("#logOut").click(function(event){
