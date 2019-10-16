@@ -3,26 +3,26 @@ var initialData = {
     isWon: false,
     planets: [{
         id: 1,
-        // **Cat-a-stropohic Chaos** //
+        // **Osaris high food, low yarn** //
         resources: [{
             resName: "Food",
-            resCount: 5,
+            resCount: 100,
             resValue: 20
             },
             {
-            resName: "Medicine",
+            resName: "Litter",
             resCount: 5,
             resValue: 30
             },
             {
-            resName: "Entertainment",
-            resCount: 5,
-            resValue: 20
+            resName: "Yarn",
+            resCount: 0,
+            resValue: 50
             },
             {
-            resName: "Technology",
+            resName: "Skooma",
             resCount: 5,
-            resValue: 10
+            resValue: 100
             },
             {
             resName: "Water",
@@ -31,7 +31,7 @@ var initialData = {
             }
             ],
         happinessCount: 20,
-        isHappy: true
+        isHappy: false
 
         },
 
@@ -39,27 +39,27 @@ var initialData = {
 
         {
         id: 2,
-        // **Deja-Moo** //
+        // **Anubis Low food, high yarn** //
         
         resources: [{
             resName: "Food",
-            resCount: 5,
-            resValue: 10
+            resCount: 2,
+            resValue: 20
             },
             {
-            resName: "Medicine",
+            resName: "Litter",
             resCount: 5,
-            resValue: 10
+            resValue: 30
             },
             {
-            resName: "Entertainment",
-            resCount: 5,
-            resValue: 10
+            resName: "Yarn",
+            resCount: 45,
+            resValue: 50
             },
             {
-            resName: "Technology",
+            resName: "Skooma",
             resCount: 5,
-            resValue: 10
+            resValue: 100
             },
             {
             resName: "Water",
@@ -68,7 +68,7 @@ var initialData = {
             }
             ],
         happinessCount: 20,
-        isHappy: true
+        isHappy: false
       
         },
 
@@ -76,36 +76,36 @@ var initialData = {
 
         {
        id: 3,
-        // **Hue-Manatee** //
+        // **Bastion low water, high litter** //
         
         resources: [{
             resName: "Food",
-            resCount: 5,
-            resValue: 10
+            resCount: 30,
+            resValue: 20
             },
             {
-            resName: "Medicine",
-            resCount: 5,
-            resValue: 10
+            resName: "Litter",
+            resCount: 60,
+            resValue: 30
             },
             {
-            resName: "Entertainment",
-            resCount: 5,
-            resValue: 10
+            resName: "Yarn",
+            resCount: 20,
+            resValue: 50
             },
             {
-            resName: "Technology",
+            resName: "Skooma",
             resCount: 5,
-            resValue: 10
+            resValue: 100
             },
             {
             resName: "Water",
-            resCount: 5,
+            resCount: 2,
             resValue: 10
             }
             ],
         happinessCount: 20,
-        isHappy: true
+        isHappy: false
         
         },
 
@@ -113,36 +113,36 @@ var initialData = {
 
     {
     id: 4,
-        // **Dumble-dope** //
+        // **Neptaaaaahys high water, low litter** //
         
         resources: [{
             resName: "Food",
             resCount: 5,
-            resValue: 10
+            resValue: 20
             },
             {
-            resName: "Medicine",
+            resName: "Litter",
             resCount: 5,
-            resValue: 10
+            resValue: 30
             },
             {
-            resName: "Entertainment",
+            resName: "Yarn",
             resCount: 5,
-            resValue: 10
+            resValue: 50
             },
             {
-            resName: "Technology",
+            resName: "Skooma",
             resCount: 5,
-            resValue: 10
+            resValue: 100
             },
             {
             resName: "Water",
-            resCount: 5,
+            resCount: 100,
             resValue: 10
             }
             ],
     happinessCount: 20,
-    isHappy: true
+    isHappy: false
     
     },
 
@@ -150,27 +150,27 @@ var initialData = {
 
     {
     id: 5,
-        // **Ice-olated** //
+        // **Sobek high skooma, low yarn** //
        
         resources: [{
             resName: "Food",
             resCount: 5,
-            resValue: 10
+            resValue: 20
             },
             {
-            resName:"Medicine",
+            resName:"Litter",
             resCount: 5,
-            resValue: 10
+            resValue: 30
             },
             {
-            resName: "Entertainment",
-            resCount: 5,
-            resValue: 10
+            resName: "Yarn",
+            resCount: 0,
+            resValue: 50
             },
             {
-            resName: "Technology",
-            resCount: 5,
-            resValue: 10
+            resName: "Skooma",
+            resCount: 500,
+            resValue: 100
             },
             {
             resName: "Water",
@@ -179,7 +179,7 @@ var initialData = {
             }
             ],
     happinessCount: 20,
-    isHappy: true
+    isHappy: false
  
     },
     {
@@ -192,17 +192,17 @@ var initialData = {
                 resValue: 10
                 },
                 {
-                resName:"Medicine",
+                resName:"Litter",
                 resCount: 5,
                 resValue: 10
                 },
                 {
-                resName: "Entertainment",
+                resName: "Yarn",
                 resCount: 5,
                 resValue: 10
                 },
                 {
-                resName: "Technology",
+                resName: "Skooma",
                 resCount: 5,
                 resValue: 10
                 },
@@ -223,7 +223,7 @@ var initialData = {
                         }
                 ],
         happinessCount: 20,
-        isHappy: true
+        isHappy: false
      
         }
     ]};
