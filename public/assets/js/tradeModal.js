@@ -36,7 +36,7 @@ $(document).ready(function () {
             dismissSpan.text("Close")
             dismissButton.append(dismissSpan);
             modalHeader.append(dismissButton);
-            var modalBody = $('<div>').addClass("modal-body container");
+            var modalBody = $('<div>').addClass("modal-body container t-modal");
 
             var mainRow = $('<div>').addClass("row");
             var portraitColumn = $('<div>').addClass("col-md-3");

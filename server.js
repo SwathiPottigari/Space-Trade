@@ -29,4 +29,3 @@ db.sequelize.sync({ force: false }).then(function() {
   }).catch(err=>{
       throw err
   });
-
