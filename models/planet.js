@@ -30,9 +30,6 @@ module.exports = function(sequelize, DataTypes) {
 
       planetStory: {
         type: DataTypes.TEXT,
-      },
-      fuel: {
-        type: DataTypes.INTEGER,
       }
     });
 
