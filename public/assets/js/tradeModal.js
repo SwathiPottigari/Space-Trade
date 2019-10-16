@@ -213,11 +213,27 @@ $(document).ready(function () {
                 return 5;
             }
         }
-        updateTradeValue(tradeDetails)
+        updateTradeValue(tradeDetails);
+
+        var gameStats={
+            id: gameLoadData.game.id,
+            planetId: correctPlanet(planetId),
+            happinessCount:gameLoadData.planets[planetId].happinessCount,
+            isHappy:gameLoadData.planets[planetId].isHappy
+        }
+        updateGameStatusValues(gameStats);
     });
 
     // This updates the resources whenever a trade happens
-
+    function updateGameStatusValues(stats) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/updateGameStats",
+            data: stats
+        }).then(function (result) {
+            console.log("end stats");
+        });
+    }
 
     function updateTradeValue(trade) {
         $.ajax({
