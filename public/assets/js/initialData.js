@@ -215,7 +215,12 @@ var initialData = {
                     resName: "Fuel",
                     resCount: 100,
                     resValue: 10
-                    }
+                    },
+                    {
+                        resName: "Money",
+                        resCount: 1000,
+                        resValue: 1000
+                        }
                 ],
         happinessCount: 20,
         isHappy: true
