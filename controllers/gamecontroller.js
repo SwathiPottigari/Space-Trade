@@ -175,12 +175,100 @@ router.put("/api/updateGame", function (req, res) {
             where: {
                 id: req.body.id
             }
-        }).then(function (dbResult) {
-            res.json(dbResult);
+        })
+        .then(function (dbGame) {
+            var k = 0;
+            var gameStateIds = [];
+            db.GamesState.findAll({
+                where: {
+                    GameId: req.body.id,
+                }
+            }).then(function (dbGameStateID) {
+                for (var i = 0; i < dbGameStateID.length; i++) {
+                    gameStateIds.push(dbGameStateID[i].dataValues.id);
+                }
+                var arrayGamePlanet = [];
+                for (var i = 0; i < req.body.planets.length; i++) {
+                    var obj = {
+                        id: gameStateIds[i],
+                        happinessCount: req.body.planets[i].happinessCount,
+                        isHappy: req.body.planets[i].isHappy,
+                        updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss"),
+                        PlanetId: req.body.planets[i].id,
+                        GameId: req.body.id
+                    }
+                    arrayGamePlanet.push(obj);
+                }
+
+                db.GamesState.bulkCreate(arrayGamePlanet, {
+                    updateOnDuplicate: ['happinessCount', 'isHappy', 'updatedAt']
+                }).then(function (result) {
+                    var resId = [];
+                    db.GameStateResources.findAll({
+                        where: {
+                            GamesStateId: gameStateIds
+                        }
+                    }).then(function (resultResId) {
+                       
+                        for (var i = 0; i < resultResId.length; i++) {
+                            resId.push(resultResId[i].dataValues.id);
+                        };
+                        // console.log(resId);
+                        var k = 0;
+                        var resArray = [];
+                        var i;
+                        var gid=5;
+                        while (k < req.body.planets.length) {
+                            if(parseInt(req.body.planets[k].id)===6)
+                            {
+                                i=25;
+                            }
+                            else if(parseInt(req.body.planets[k].id)===5){
+                                i=20;
+                            }
+                            else if(parseInt(req.body.planets[k].id)===4){
+                                i=15;
+                            }
+                            else if(parseInt(req.body.planets[k].id)===3){
+                                i=10;
+                            }
+                            else if(parseInt(req.body.planets[k].id)===2){
+                                i=5;
+                            }
+                            else{
+                                i=0;
+                            }
+                           
+                                for (var j = 0; j < req.body.planets[k].resources.length; j++) {
+                                    var resObj = {
+                                        id: resId[i],
+                                        resName: req.body.planets[k].resources[j].resName,
+                                        resCount: req.body.planets[k].resources[j].resCount,
+                                        resValue: req.body.planets[k].resources[j].resValue, updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss"),
+                                        GamesStateId: gameStateIds[gid]
+                                    }
+                                    resArray.push(resObj);
+                                    i++;
+                                }
+                                gid--;
+                                k++;
+                            }
+                        
+                         console.log(resArray);
+                        db.GameStateResources.bulkCreate(resArray, {
+                            updateOnDuplicate: ['resCount', 'updatedAt']
+                        }).then(function (result) {
+                            console.log(result);
+                        })
+                    });
+                  
+                });
+
+            });
+
+            res.json(req.session.user.id);
         });
-
 });
-
 router.put("/api/updateGameStats", function (req, res) {
     db.GamesState.update({
         happinessCount: req.body.happinessCount,
@@ -201,13 +289,13 @@ router.put("/api/updateGameStats", function (req, res) {
 
 router.put("/api/updateUserResources", function (req, res) {
     db.GameStateResources.update({
-        resCount:req.body.resCount,
+        resCount: req.body.resCount,
         updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss")
 
     },
         {
             where: {
-                id:req.body.id
+                id: req.body.id
             }
         }).then(function (dbResult) {
             res.json(dbResult);

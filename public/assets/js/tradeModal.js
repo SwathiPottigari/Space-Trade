@@ -189,31 +189,31 @@ $(document).ready(function () {
             gameLoadData.planets[planetId].Resources[id - 1].resCount = count;
         };
 
-        var tradeDetails = {
-            id: gameLoadData.game.id,
-            resourceId: resId,
-            planetId: correctPlanet(planetId),
-            resName: gameLoadData.planets[planetId].Resources[resId - 1].resName,
-            resCount: gameLoadData.planets[planetId].Resources[resId - 1].resCount
-        }
-        function correctPlanet(planetId) {
-            if (planetId === 5) {
-                return 1;
-            }
-            else if (planetId === 4) {
-                return 2;
-            }
-            else if (planetId === 3) {
-                return 1;
-            }
-            else if (planetId === 2) {
-                return 1;
-            }
-            else if (planetId === 1) {
-                return 5;
-            }
-        }
-        updateTradeValue(tradeDetails);
+        // var tradeDetails = {
+        //     id: gameLoadData.game.id,
+        //     resourceId: resId,
+        //     planetId: correctPlanet(planetId),
+        //     resName: gameLoadData.planets[planetId].Resources[resId - 1].resName,
+        //     resCount: gameLoadData.planets[planetId].Resources[resId - 1].resCount
+        // }
+        // function correctPlanet(planetId) {
+        //     if (planetId === 5) {
+        //         return 1;
+        //     }
+        //     else if (planetId === 4) {
+        //         return 2;
+        //     }
+        //     else if (planetId === 3) {
+        //         return 1;
+        //     }
+        //     else if (planetId === 2) {
+        //         return 1;
+        //     }
+        //     else if (planetId === 1) {
+        //         return 5;
+        //     }
+        // }
+        // updateTradeValue(tradeDetails);
         // var resource={
         //     id:gameLoadData.planets[0].Resources[resId].id,
         //     resCount:gameLoadData.planets[planetId].Resources[resId - 1].resCount
@@ -221,13 +221,13 @@ $(document).ready(function () {
         
         // saveUserResources(resource);
 
-        var gameStats={
-            id: gameLoadData.game.id,
-            planetId: correctPlanet(planetId),
-            happinessCount:gameLoadData.planets[planetId].happinessCount,
-            isHappy:gameLoadData.planets[planetId].isHappy
-        }
-        updateGameStatusValues(gameStats);
+        // var gameStats={
+        //     id: gameLoadData.game.id,
+        //     planetId: correctPlanet(planetId),
+        //     happinessCount:gameLoadData.planets[planetId].happinessCount,
+        //     isHappy:gameLoadData.planets[planetId].isHappy
+        // }
+        // updateGameStatusValues(gameStats);
     });
 
 
