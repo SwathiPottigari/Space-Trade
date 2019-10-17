@@ -1,0 +1,161 @@
+/* MAIN BACKGROUND */
+body {
+    background: url("../images/background.jpg");
+}
+
+/* LOGIN TITLE */
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 51px;
+    text-align: center;
+    color: #65dd00;
+    margin-top: 5%;
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    text-align: center;
+    color: #65dd00;
+}
+
+/* LOGIN FORM */
+.log-body,
+.select-body {
+    background: #c1c1c1;
+}
+
+form {
+    font-family: 'Press Start 2P', cursive;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.formBtn {
+    text-align: center;
+}
+
+.select {
+    text-align: center;
+}
+
+.select,
+.login {
+    font-family: 'Press Start 2P', cursive;
+    background: url("../images/modal-background.jpg");
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #28cc00;
+    border: 8px solid #757575;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 70%;
+}
+
+/* ALL IMAGES */
+img {
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ALL BUTTONS */
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+}
+
+/* PLANET UI */
+.planet:hover {
+    border: 4px solid #65dd00;
+}
+
+.p-name {
+    font-family: 'Press Start 2P', cursive;
+    color: #b5ffff;
+}
+
+/* GAME PAGE */
+.main {
+    background: rgba(150, 175, 200, 0.5);
+    margin-top: 8%;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.map {
+    text-align: center;
+}
+
+/* HUD */
+.cargo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #ffff66;
+}
+
+#star-bucks,
+#fuel,
+#cargo-hold {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    color: #ffff66;
+}
+
+#win-title {
+    font-family: 'Press Start 2P', cursive;
+    color: #b5ffff;
+}
+
+#win-con {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff2525;
+    /* background-color: #ff2525; */
+}
+
+/* INTRO MODAL */
+.modal-content {
+    background: url("../images/modal-background.jpg");
+    border-color: #757575;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-header {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    color: #28cc00;
+}
+
+.modal-body {
+    font-family: 'Press Start 2P', cursive;
+    color: #28cc00;
+}
+
+.i-modal {
+    text-align: center;
+}
+
+/* TRADE MODAL */
+.trade-modal {
+    width: 75%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+}
+
+.close {
+    color: #65dd00;
+}
+
+.t-modal {
+    font-size: 14px;
+}
+
+th {
+    padding-right: 80px;
+}

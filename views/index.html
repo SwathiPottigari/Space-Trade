@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!-- Google font link -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <title>Space Trade</title>
+
+</head>
+
+<body>
+
+
+    <div class="container main">
+
+        <div class="row">
+            <!-- HUD -->
+            <div class="col-md-3">
+                <!-- <div class="row">
+                    <div class="col">
+                        <span id="user-name">User Name</span>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col">
+                        <img id="user-img" class="img-fluid" src="/assets/images/space-cat1.png" alt="">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <p id="star-bucks">Star Bucks:<span id="money"></span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span id="fuel">Fuel:</span>
+                        <progress max="100" value="100" class="Progress-main" aria-labelledby="Progress-id">
+                            <div class="Progress-bar" role="presentation">
+                                <span class="Progress-value" style="width: 80%;">&nbsp;</span>
+                            </div>
+                        </progress>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <span id=cargo-hold>Cargo Hold</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="res-0" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="res-1" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="res-2" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="res-3" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="res-4" class="cargo"></span>
+                    </div>
+                </div>
+                <!-- <div class="col-md-6">
+                        <span id="res-5" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="res-6" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="res-7" class="cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="res-8" class="cargo"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="res-9" class="cargo"></span>
+                    </div>
+                </div> -->
+
+                <div class="row">
+                    <div class="col">
+                        <br>
+                        <br>
+                        <button id="logOut">SAVE & QUIT</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END HUD -->
+
+            <!-- MAP -->
+            <div class="col-md-9 map">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span id="win-title">Planetary<br>Happiness:</span>
+                        <br>
+                        <span id="win-con"> </span>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="p-name">Osiris</p>
+                        <img id="5" class="img-fluid planet" src="/assets/images/planet1.jpg" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <p class="p-name">Anubis</p>
+                        <img id="4" class="img-fluid planet" src="/assets/images/planet2.jpg" alt="">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="p-name">Bastion</p>
+                        <img id="3" class="img-fluid planet" src="/assets/images/planet3.jpg" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <p class="p-name">Nephthys</p>
+                        <img id="2" class="img-fluid planet" src="/assets/images/planet4.jpg" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <p class="p-name">Sobek</p>
+                        <img id="1" class="img-fluid planet" src="/assets/images/planet5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- END MAP -->
+        </div>
+    </div>
+
+    <!--Instruction/Story Modal-->
+    <div class="modal fade" id="instructionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="instructionModalTitle">Welcome to the Galaxy!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body i-modal">
+                    <img class="img-fluid" src="/assets/images/grumpy-cat.jpg" alt="">
+                    <br>
+                    <br>
+                    <p>Your goal is to bring happiness to the galaxy - through TRADE.</p>
+                    <p>Providing planets with enough basic resources and an abundance of their favorite resource will
+                        make that planet happy. When all planets are happy, you win.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/initialData.js"></script>
+    <script src="/assets/js/playArea.js"></script>
+    <script src="/assets/js/tradeModal.js"></script>
+
+</body>
+
+</html>
