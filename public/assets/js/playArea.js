@@ -40,7 +40,7 @@ function mapData(data) {
 };
 
 $("#logOut").click(function (event) {
-  var gameData = createSaveData(gameLoadData);  
+  var gameData = createSaveData(gameLoadData);
   // console.log("this is the data to be saved");
   console.log(gameData);
   $.ajax({
@@ -49,11 +49,10 @@ $("#logOut").click(function (event) {
     // Have to map the original data into it
     data: gameData
   })
-    .then(function (result) {        
+    .then(function (result) {
       window.location = "/";
     });
 });
-
 // function saveUserResources(resources){ 
 //   for(var i=0;i<resources.length;i++){
 //     var resource={
@@ -74,14 +73,29 @@ $("#logOut").click(function (event) {
 //   }
 //   }
 
-
 function createSaveData(data) {
   var planetsData = {
     id: data.game.id,
     difficulty: data.game.difficulty,
     isWon: data.game.isWon,
-    resources:data.planets[0].Resources
+    planets: updatePlanets()
   }
+  function updatePlanets() {
+    var planetsArray=[];
+    for (var i = 0; i < data.planets.length; i++) {
+      var obj = {
+        id:data.planets[i].PlanetId,
+        resources:mapResources(data.planets[i].Resources),
+        happinessCount:data.planets[i].happinessCount,
+        isHappy:data.planets[i].isHappy
+      }
+      planetsArray.push(obj);
+    }
+    return planetsArray;
+  } 
+
+  return planetsData;
+};
   // function updatePlanets() {
   //   var planetsArray=[];
   //   for (var i = 0; i < data.planets.length; i++) {
@@ -96,8 +110,18 @@ function createSaveData(data) {
   //   return planetsArray;
   // } 
 
-  return planetsData;
-};
+  function mapResources(resources){
+    var array=[];
+    for (var i = 0; i < resources.length; i++) {
+      var obj = {
+        resName: resources[i].resName,
+        resCount: resources[i].resCount,
+        resValue: resources[i].resValue
+      }
+      array.push(obj);
+  }
+  return array;
+  };
 
 // function mapResources(resources){
 //   var array=[];
