@@ -199,6 +199,22 @@ router.put("/api/updateGameStats", function (req, res) {
 
 });
 
+router.put("/api/updateUserResources", function (req, res) {
+    db.GameStateResources.update({
+        resCount:req.body.resCount,
+        updatedAt: moment(Date.now()).format("YYYY-MM-DD hh:mm:ss")
+
+    },
+        {
+            where: {
+                id:req.body.id
+            }
+        }).then(function (dbResult) {
+            res.json(dbResult);
+        });
+
+});
+
 router.delete("/api/", function (req, res) {
 
 });
