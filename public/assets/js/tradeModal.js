@@ -214,12 +214,12 @@ $(document).ready(function () {
             }
         }
         updateTradeValue(tradeDetails);
-        var resource={
-            id:gameLoadData.planets[0].Resources[resId].id,
-            resCount:gameLoadData.planets[planetId].Resources[resId - 1].resCount
-          }
+        // var resource={
+        //     id:gameLoadData.planets[0].Resources[resId].id,
+        //     resCount:gameLoadData.planets[planetId].Resources[resId - 1].resCount
+        //   }
         
-        saveUserResources(resource);
+        // saveUserResources(resource);
 
         var gameStats={
             id: gameLoadData.game.id,
@@ -231,19 +231,19 @@ $(document).ready(function () {
     });
 
 
-    function saveUserResources(resources){ 
-        console.log(resources);       
-        $.ajax({
-          method: "PUT",
-          url: "/api/updateUserResources",
-          // Have to map the original data into it
-          data: resources
-        })
-          .then(function (result) {
-            // window.location = "/";
-            console.log("Saved Resources");
-          });
-        }
+    // function saveUserResources(resources){ 
+    //     console.log(resources);       
+    //     $.ajax({
+    //       method: "PUT",
+    //       url: "/api/updateUserResources",
+    //       // Have to map the original data into it
+    //       data: resources
+    //     })
+    //       .then(function (result) {
+    //         // window.location = "/";
+    //         console.log("Saved Resources");
+    //       });
+    //     }
 
     // This updates the resources whenever a trade happens
     function updateGameStatusValues(stats) {
